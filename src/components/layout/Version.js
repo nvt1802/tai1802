@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 const Version = () => {
   useEffect(() => {
-    console.log(process.env)
+    console.log('ENV', process.env)
   })
 
   return (
