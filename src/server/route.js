@@ -2,17 +2,20 @@ import React from 'react'
 import HomePage from 'pages/HomePage'
 import LoginPage from 'pages/LoginPage'
 import { Route } from 'react-router-dom'
+import AuthRoute from 'server/AuthRoute'
 
 const routes = [
 	{
 		path: "/",
 		exact: true,
-		component: HomePage
+		component: (props) => (
+			<AuthRoute {...props} component={() => <HomePage {...props} />} />
+		)
 	},
 	{
 		path: "/login",
 		exact: true,
-		component: LoginPage
+		component: (props) => <LoginPage {...props} />
 	},
 	{
 		path: '',
@@ -28,8 +31,8 @@ export const RouteWithSubRoutes = (route) => {
 		<Route
 			path={route.path}
 			exact={route.exact}
-			render={props => (<>
-				<route.component {...props} routes={route.routes} />
+			render={(props) => (<>
+				<route.component {...props} {...route} routes={route.routes} />
 			</>)}
 		/>
 	</>)

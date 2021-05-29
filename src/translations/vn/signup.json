@@ -1,0 +1,12 @@
+{
+  "title": "Đăng Ký",
+  "btn_sign_in": "Đăng Ký",
+  "lbl_forgot_password": "Quên mật khẩu ?",
+  "lbl_sign_up": "Đã có tài khoản? Đăng nhập",
+  "validate": {
+    "auth/weak-password": "Mật khẩu phải có ít nhất 6 ký tự",
+    "auth/email-already-in-use": "Địa chỉ email đã được một tài khoản khác sử dụng"
+  },
+  "lbl_sign_up_success": "Tạo tài khoản thành công!",
+  "lbl_login_now": "Đăng nhập ngay"
+}

@@ -1,0 +1,14 @@
+{
+  "language": {
+    "en": "English",
+    "vn": "Vietnamese"
+  },
+  "dialog_title_language": "Setting Language",
+  "tooltip_language": "Change Language",
+  "title_change_language": "You can change the language for the entire site",
+  "validate": {
+    "email_format": "Email must be a valid email",
+    "message_require": "{{field}} is a required field",
+    "password_length": "The password is too short"
+  }
+}
