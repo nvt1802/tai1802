@@ -1,6 +1,10 @@
 {
+  "title_language": "Ngôn ngữ",
   "language": {
+    "cn": "Tiếng Trung",
     "en": "Tiếng Anh",
+    "jp": "Tiếng Nhật",
+    "kr": "Tiếng Hàn",
     "vn": "Tiếng Việt"
   },
   "dialog_title_language": "Cài đặt ngôn ngữ",

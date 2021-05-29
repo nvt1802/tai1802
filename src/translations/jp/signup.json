@@ -1,0 +1,12 @@
+{
+  "title": "サインイン",
+  "btn_sign_in": "サインイン",
+  "lbl_forgot_password": "パスワードをお忘れですか ？",
+  "lbl_sign_up": "すでにアカウントをお持ちですか？ サインイン",
+  "validate": {
+    "auth/weak-password": "パスワードは 6 文字以上にする必要があります",
+    "auth/email-already-in-use": "メールアドレスは別のアカウントですでに使用されています"
+  },
+  "lbl_sign_up_success": "アカウントが作成されました！",
+  "lbl_login_now": "今すぐサインイン"
+}

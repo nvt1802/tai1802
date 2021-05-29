@@ -1,0 +1,18 @@
+{
+  "title_language": "语",
+  "language": {
+    "cn": "中国文字",
+    "en": "英语",
+    "jp": "日本人",
+    "kr": "韩国人",
+    "vn": "越南语"
+  },
+  "dialog_title_language": "设置语言",
+  "tooltip_language": "改变语言",
+  "title_change_language": "您可以更改整个网站的语言",
+  "validate": {
+    "email_format": "电子邮件必须是有效的电子邮件",
+    "message_require": "{{field}} 是必填字段",
+    "password_length": "密码太短"
+  }
+}
