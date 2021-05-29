@@ -13,7 +13,7 @@ const Version = () => {
       textDecoration: 'underline',
       color: '#ffff'
     }}>
-      {`Ver: ${process.env?.REACT_APP_VERSION}`}
+      {`Ver ${process.env?.REACT_APP_VERSION}`}
     </div>
   )
 }

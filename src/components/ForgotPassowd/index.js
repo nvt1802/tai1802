@@ -19,13 +19,13 @@ import 'firebase/auth'
 import { Alert } from '@material-ui/lab'
 
 const Language = ({ status, setStatus }) => {
-  const { t } = useTranslation('common', 'forgot_password')
+  const { t } = useTranslation('common', 'forgot_password', 'login')
   const [isDisable, setDisable] = useState(false)
   const [openAlert, setOpenAlert] = useState(false)
 
   const schema = yup.object().shape({
     email: yup.string()
-      .required(t('common:validate.message_require', { field: 'Email' }))
+      .required(t('common:validate.message_require', { field: t('login:lbl_email') }))
       .email(t('common:validate.email_format'))
   });
 
@@ -73,7 +73,7 @@ const Language = ({ status, setStatus }) => {
                   variant="outlined"
                   margin="normal"
                   fullWidth
-                  label="Email"
+                  label={t('login:lbl_email')}
                   type="email"
                   autoComplete="off"
                   error={errors.email ? true : false}
@@ -97,7 +97,7 @@ const Language = ({ status, setStatus }) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Close
+            {t('common:lbl_close')}
           </Button>
         </DialogActions>
       </Dialog>
