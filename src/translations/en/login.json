@@ -1,6 +1,8 @@
 {
   "title": "Login",
   "btn_sign_in": "Login",
+  "lbl_email": "Email",
+  "lbl_password": "Password",
   "lbl_forgot_password": "Forgot password ?",
   "lbl_sign_in": "Don't have an account? Sign Up",
   "validate": {

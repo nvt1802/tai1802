@@ -7,6 +7,7 @@
     "kr": "Korean",
     "vn": "Vietnamese"
   },
+  "lbl_close": "Close",
   "dialog_title_language": "Setting Language",
   "tooltip_language": "Change Language",
   "title_change_language": "You can change the language for the entire site",

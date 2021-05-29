@@ -1,6 +1,8 @@
 {
   "title": "Đăng nhập",
   "btn_sign_in": "Đăng nhập",
+  "lbl_email": "Email",
+  "lbl_password": "Mật khẩu",
   "lbl_forgot_password": "Quên mật khẩu ?",
   "lbl_sign_in": "Không có tài khoản? Đăng ký",
   "validate": {

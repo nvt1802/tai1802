@@ -1,6 +1,8 @@
 {
   "title": "ログイン",
   "btn_sign_in": "ログイン",
+  "lbl_email": "Eメール",
+  "lbl_password": "パスワード",
   "lbl_forgot_password": "パスワードをお忘れですか ？",
   "lbl_sign_in": "アカウントをお持ちではありませんか？ サインアップ",
   "validate": {
