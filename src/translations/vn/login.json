@@ -1,0 +1,11 @@
+{
+  "title": "Đăng nhập",
+  "btn_sign_in": "Đăng nhập",
+  "lbl_forgot_password": "Quên mật khẩu ?",
+  "lbl_sign_in": "Không có tài khoản? Đăng ký",
+  "validate": {
+    "auth/user-not-found": "Không có bản ghi người dùng tương ứng với số nhận dạng này. Người dùng có thể đã bị xóa",
+    "auth/wrong-password": "Mật khẩu không hợp lệ hoặc người dùng không có mật khẩu",
+    "auth/user-disabled": "Tài khoản người dùng đã bị quản trị viên vô hiệu hóa"
+  }
+}

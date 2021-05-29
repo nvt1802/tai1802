@@ -1,0 +1,14 @@
+{
+  "language": {
+    "en": "Tiếng Anh",
+    "vn": "Tiếng Việt"
+  },
+  "dialog_title_language": "Cài đặt ngôn ngữ",
+  "tooltip_language": "Thay đổi ngôn ngữ",
+  "title_change_language": "Bạn có thể thay đổi ngôn ngữ cho toàn bộ trang web",
+  "validate": {
+    "email_format": "Email phải là một email hợp lệ",
+    "message_require": "{{field}} là một trường bắt buộc",
+    "password_length": "Mật khẩu quá ngắn"
+  }
+}

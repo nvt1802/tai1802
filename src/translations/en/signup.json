@@ -1,0 +1,12 @@
+{
+  "title": "Sign In",
+  "btn_sign_in": "Sign In",
+  "lbl_forgot_password": "Forgot password ?",
+  "lbl_sign_up": "Already have an account? Sign In",
+  "validate": {
+    "auth/weak-password": "Password should be at least 6 characters",
+    "auth/email-already-in-use": "The email address is already in use by another account"
+  },
+  "lbl_sign_up_success": "Account successfully created!",
+  "lbl_login_now": "Sign in now"
+}

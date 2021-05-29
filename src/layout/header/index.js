@@ -9,8 +9,9 @@ import {
   Menu,
   Grid,
 } from '@material-ui/core'
-import { Menu as MenuIcon, AccountCircle } from '@material-ui/icons'
+import { Menu as MenuIcon, ExitToApp, ListAlt, Settings } from '@material-ui/icons'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { useTranslation } from 'react-i18next'
 import Sidebar from 'layout/sidebar'
 import When from 'components/When'
 
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MenuAppBar() {
   const classes = useStyles()
+  const { t } = useTranslation('header')
   const [anchorEl, setAnchorEl] = useState(null)
   const [position, setPosition] = useState('relative')
   const [isOpenSidebar, setOpenSidebar] = React.useState(false)
@@ -69,8 +71,8 @@ export default function MenuAppBar() {
         <MenuIcon />
       </IconButton>
       <Typography variant="h6" className={classes.title}>
-        Home Page
-          </Typography>
+        {t('header:title_page')}
+      </Typography>
       <div>
         <When condition={sizeMm}>
           <IconButton
@@ -80,7 +82,7 @@ export default function MenuAppBar() {
             onClick={handleMenu}
             color="inherit"
           >
-            <AccountCircle />
+            <ListAlt />
           </IconButton>
           <Menu
             id="menu-appbar"
@@ -97,18 +99,24 @@ export default function MenuAppBar() {
             open={open}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>{t('header:btn_setting')}</MenuItem>
+            <MenuItem onClick={handleClose}>{t('header:btn_logout')}</MenuItem>
           </Menu>
         </When>
 
         <When condition={sizeLg}>
           <Grid container>
             <Grid>
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Settings />
+                <span style={{ marginLeft: '0.5em' }}>{t('header:btn_setting')}</span>
+              </MenuItem>
             </Grid>
             <Grid>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <ExitToApp />
+                <span style={{ marginLeft: '0.5em' }}>{t('header:btn_logout')}</span>
+              </MenuItem>
             </Grid>
           </Grid>
         </When>

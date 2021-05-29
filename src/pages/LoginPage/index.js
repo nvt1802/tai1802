@@ -28,10 +28,10 @@ const LoginPage = (props) => {
   const {
     history,
     user,
-    signInWithGoogle,
+    loginWithGoogle,
   } = props
   const classes = useStyles()
-  const { t } = useTranslation(['signin', 'common'])
+  const { t } = useTranslation(['login', 'common'])
   const [showPassword, setShowPassword] = useState(false)
   const [focusEmail, setFocusEmail] = useState(false)
   const [focusPassword, setFocusPassword] = useState(false)
@@ -58,7 +58,7 @@ const LoginPage = (props) => {
 
   const handleLoginWithGoogle = (event) => {
     event.preventDefault()
-    signInWithGoogle()
+    loginWithGoogle()
   }
 
   const handleLoginWithFacebook = (event) => {
@@ -67,13 +67,13 @@ const LoginPage = (props) => {
   }
 
   const onSubmit = data => {
-    firebase.auth().signInWithEmailAndPassword(data?.email, data?.password)
+    firebase.auth().loginWithEmailAndPassword(data?.email, data?.password)
       .then((res) => history?.push('/'))
       .catch(error => {
         console.log(error?.message)
         setError('errorAfterSubmit', {
           type: "manual",
-          message: t(`signin:validate.${error?.code}`)
+          message: t(`login:validate.${error?.code}`)
         });
       })
   }
@@ -86,7 +86,7 @@ const LoginPage = (props) => {
           {/* <LockOutlinedIcon /> */}
         </Avatar>
         <Typography component="h1" variant="h5">
-          {t('signin:title')}
+          {t('login:title')}
         </Typography>
         <form className={classes.form} noValidate method="POST" onSubmit={handleSubmit(onSubmit)} >
           <Controller
@@ -161,7 +161,7 @@ const LoginPage = (props) => {
             color="secondary"
             className={classes.submit}
           >
-            {t('signin:btn_sign_in')}
+            {t('login:btn_sign_in')}
           </Button>
           <FormHelperText error style={{ textAlign: 'center' }}>{errors?.errorAfterSubmit?.message}</FormHelperText>
           <Grid container>
@@ -202,12 +202,12 @@ const LoginPage = (props) => {
           <Grid container>
             <Grid item xs>
               <Link to="#" variant="body2" className={classes.link} onClick={() => setShowForgotPassword(true)}>
-                {t('signin:lbl_forgot_password')}
+                {t('login:lbl_forgot_password')}
               </Link>
             </Grid>
             <Grid item>
               <Link to="/SignUp" variant="body2" className={classes.link}>
-                {t('signin:lbl_sign_in')}
+                {t('login:lbl_sign_in')}
               </Link>
             </Grid>
           </Grid>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom"
 import routes, { RouteWithSubRoutes } from 'server/route'
 import { connect } from 'react-redux'
 import Header from 'layout/header'
+import Footer from 'layout/footer'
 
 function Server() {
   return (
@@ -13,6 +14,7 @@ function Server() {
           <RouteWithSubRoutes key={i} {...route} />
         ))}
       </Switch >
+      <Footer />
     </Router >
   );
 }
