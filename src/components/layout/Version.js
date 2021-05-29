@@ -1,10 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const Version = () => {
-  useEffect(() => {
-    console.log('ENV', process.env)
-  })
-
   return (
     <div style={{
       position: 'absolute',
