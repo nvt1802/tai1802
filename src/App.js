@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Version from 'components/layout/Version'
 
 function App() {
   return (
-    <div className="App">
+    <Fragment>
+      <div className="App">
 
-    </div>
+      </div>
+
+      <Version />
+    </Fragment>
   )
 }
 

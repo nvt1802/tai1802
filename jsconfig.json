@@ -4,8 +4,8 @@
     "module": "commonjs",
     "baseUrl": "./src",
     "paths": {
-      "@components": ["components/*"],
-      "@redux": ["redux/*"]
+      "components": ["components/*"],
+      "redux": ["redux/*"]
     }
   }
 }
