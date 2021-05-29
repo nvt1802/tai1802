@@ -10,7 +10,8 @@ const Version = () => {
       fontSize: '0.9em',
       fontWeight: 'bold',
       fontStyle: 'italic',
-      textDecoration: 'underline'
+      textDecoration: 'underline',
+      color: '#ffff'
     }}>
       {`Ver: ${process.env?.REACT_APP_VERSION}`}
     </div>

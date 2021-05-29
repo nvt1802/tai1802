@@ -9,6 +9,7 @@ import 'firebase/auth'
 import { Backdrop, CircularProgress, makeStyles } from '@material-ui/core'
 import When from 'components/Condition/When'
 import Language from 'components/Language'
+import Version from 'components/Version'
 
 function Server(props) {
   const classes = useStyles()
@@ -29,6 +30,7 @@ function Server(props) {
             <Footer />
           </When>
           <When condition={typeof (user) === 'undefined' || user === null}>
+            <Version />
             <Language />
           </When>
         </Router >
