@@ -22,7 +22,7 @@ import {
 } from '@material-ui/icons'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { useTranslation } from 'react-i18next'
-import Sidebar from '../sidebar'
+import Sidebar from 'layout/sidebar'
 import When from 'components/Condition/When'
 
 const useStyles = makeStyles((theme) => ({
