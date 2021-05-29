@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function SwipeableTemporaryDrawer({ isOpen, toggleDrawer }) {
+export default function Sidebar({ isOpen, toggleDrawer }) {
   const classes = useStyles()
 
   const list = () => (

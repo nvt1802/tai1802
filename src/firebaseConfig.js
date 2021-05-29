@@ -3,14 +3,13 @@ import 'firebase/database'
 import 'firebase/storage'
 
 const config = {
-  apiKey: "AIzaSyB6TM3CTsGjow8Y_hCMjzrVAuSv29F9vNw",
-  authDomain: "management-music.firebaseapp.com",
-  databaseURL: "https://management-music-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "management-music",
-  storageBucket: "management-music.appspot.com",
-  messagingSenderId: "907626662282",
-  appId: "1:907626662282:web:f8913d19bcc25388daa073",
-  measurementId: "G-K354VMB0VL"
+  apiKey: "AIzaSyAjYU3x7GY_fWbkXP9VifDxRL_E5fm5KXI",
+  authDomain: "tai1802.firebaseapp.com",
+  projectId: "tai1802",
+  storageBucket: "tai1802.appspot.com",
+  messagingSenderId: "664708445564",
+  appId: "1:664708445564:web:3fcd1e054b8eb8e00820f9",
+  measurementId: "G-1LPWF3HBGT"
 }
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
