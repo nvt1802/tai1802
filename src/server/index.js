@@ -16,7 +16,9 @@ function Server(props) {
     <Fragment>
       <When condition={typeof (user) !== 'undefined'}>
         <Router>
-          <Header {...props} />
+          <When condition={typeof (user) !== 'undefined' && user !== null}>
+            <Header {...props} />
+          </When>
           <Switch>
             {routes.map((route, i) => (
               <RouteWithSubRoutes key={i} {...route}{...props} />

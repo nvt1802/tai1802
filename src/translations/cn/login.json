@@ -1,0 +1,11 @@
+{
+  "title": "登录",
+  "btn_sign_in": "登录",
+  "lbl_forgot_password": "忘记密码 ？",
+  "lbl_sign_in": "还没有帐号？ 报名",
+  "validate": {
+    "auth/user-not-found": "没有与此标识符对应的用户记录。 该用户可能已被删除",
+    "auth/wrong-password": "密码无效或用户没有密码",
+    "auth/user-disabled": "用户帐户已被管理员禁用"
+  }
+}

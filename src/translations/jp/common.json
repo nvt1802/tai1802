@@ -1,0 +1,18 @@
+{
+  "title_language": "言語",
+  "language": {
+    "cn": "中国語",
+    "en": "英語",
+    "jp": "日本語",
+    "kr": "韓国語",
+    "vn": "ベトナム語"
+  },
+  "dialog_title_language": "言語の設定",
+  "tooltip_language": "言語を変えてください",
+  "title_change_language": "サイト全体の言語を変更できます",
+  "validate": {
+    "email_format": "電子メールは有効な電子メールである必要があります",
+    "message_require": "{{field}} は必須フィールドです",
+    "password_length": "パスワードが短すぎます"
+  }
+}

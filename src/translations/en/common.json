@@ -1,6 +1,10 @@
 {
+  "title_language": "Language",
   "language": {
+    "cn": "Chinese",
     "en": "English",
+    "jp": "Japanese",
+    "kr": "Korean",
     "vn": "Vietnamese"
   },
   "dialog_title_language": "Setting Language",

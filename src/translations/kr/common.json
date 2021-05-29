@@ -1,0 +1,18 @@
+{
+  "title_language": "언어",
+  "language": {
+    "cn": "중국말",
+    "en": "영어",
+    "jp": "일본어",
+    "kr": "한국어",
+    "vn": "베트남어"
+  },
+  "dialog_title_language": "언어 설정",
+  "tooltip_language": "언어 변경",
+  "title_change_language": "전체 사이트의 언어를 변경할 수 있습니다.",
+  "validate": {
+    "email_format": "이메일은 유효한 이메일이어야합니다.",
+    "message_require": "{{field}} 필수 필드입니다.",
+    "password_length": "비밀번호가 너무 짧습니다"
+  }
+}

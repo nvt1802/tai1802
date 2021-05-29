@@ -75,8 +75,8 @@ export default function Header(props) {
   const [anchorEl, setAnchorEl] = useState(null)
   const [position, setPosition] = useState('relative')
   const [isOpenSidebar, setOpenSidebar] = React.useState(false)
-  const sizeMm = useMediaQuery('(max-width:768px)')
-  const sizeLg = useMediaQuery('(min-width:768px)')
+  const maxMm = useMediaQuery('(max-width:768px)')
+  const minLg = useMediaQuery('(min-width:768px)')
 
   useEffect(() => {
     window.addEventListener("scroll", headerColorChange)
@@ -150,7 +150,7 @@ export default function Header(props) {
       </Typography>
       <When condition={typeof (user) !== 'undefined' && user !== null}>
         <div>
-          <When condition={sizeMm}>
+          <When condition={maxMm}>
             <IconButton
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -163,7 +163,7 @@ export default function Header(props) {
             {renderMenu()}
           </When>
 
-          <When condition={sizeLg}>
+          <When condition={minLg}>
             <Grid container>
               <Grid style={{ margin: 'auto' }}>
                 <MenuItem onClick={handleClose}>
