@@ -32,8 +32,8 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "REACT_APP_VERSION=1.2 && react-scripts build",
+    "start": "SET REACT_APP_VERSION=2.0 && react-scripts start",
+    "build": "SET REACT_APP_VERSION=1.2 && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
