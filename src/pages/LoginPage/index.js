@@ -48,10 +48,10 @@ const LoginPage = (props) => {
 
   const schema = yup.object().shape({
     email: yup.string()
-      .required(t('common:validate.message_require', { field: 'Email' }))
+      .required(t('common:validate.message_require', { field: t('login:lbl_email') }))
       .email(t('common:validate.email_format')),
     password: yup.string()
-      .required(t('common:validate.message_require', { field: 'Password' }))
+      .required(t('common:validate.message_require', { field: t('login:lbl_password') }))
       .min(6, t('common:validate.password_length'))
   });
 
@@ -147,7 +147,7 @@ const LoginPage = (props) => {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    label="Email"
+                    label={t('login:lbl_email')}
                     type="email"
                     autoComplete="off"
                     error={errors.email ? true : false}
@@ -174,7 +174,7 @@ const LoginPage = (props) => {
                     variant="outlined"
                     margin="normal"
                     fullWidth
-                    label="Password"
+                    label={t('login:lbl_password')}
                     type={!showPassword ? 'password' : 'text'}
                     autoComplete="off"
                     error={errors.password ? true : false}
@@ -247,13 +247,13 @@ const LoginPage = (props) => {
                     >Google</Button>
                   </Grid>
                 </Grid>
-                <Grid container>
-                  <Grid item xs>
+                <Grid container >
+                  <Grid item xs={6}>
                     <Link to="#" variant="body2" className={classes.link} onClick={() => setShowForgotPassword(true)}>
                       {t('login:lbl_forgot_password')}
                     </Link>
                   </Grid>
-                  <Grid item>
+                  <Grid item xs={6}>
                     <Link to="/SignUp" variant="body2" className={classes.link}>
                       {t('login:lbl_sign_in')}
                     </Link>

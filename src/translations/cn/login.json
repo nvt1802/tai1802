@@ -1,6 +1,8 @@
 {
   "title": "登录",
   "btn_sign_in": "登录",
+  "lbl_email": "电子邮件",
+  "lbl_password": "密码",
   "lbl_forgot_password": "忘记密码 ？",
   "lbl_sign_in": "还没有帐号？ 报名",
   "validate": {

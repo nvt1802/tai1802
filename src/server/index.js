@@ -8,6 +8,7 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import 'firebase/auth'
 import { Backdrop, CircularProgress, makeStyles } from '@material-ui/core'
 import When from 'components/Condition/When'
+import Language from 'components/Language'
 
 function Server(props) {
   const classes = useStyles()
@@ -24,7 +25,12 @@ function Server(props) {
               <RouteWithSubRoutes key={i} {...route}{...props} />
             ))}
           </Switch >
-          <Footer />
+          <When condition={typeof (user) !== 'undefined' && user !== null}>
+            <Footer />
+          </When>
+          <When condition={typeof (user) === 'undefined' || user === null}>
+            <Language />
+          </When>
         </Router >
       </When>
       <When condition={typeof (user) === 'undefined'}>

@@ -1,6 +1,8 @@
 {
   "title": "로그인",
   "btn_sign_in": "로그인",
+  "lbl_email": "이메일",
+  "lbl_password": "암호",
   "lbl_forgot_password": "비밀번호를 잊으 셨나요 ?",
   "lbl_sign_in": "계정이 없으십니까? 가입하기",
   "validate": {

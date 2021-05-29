@@ -54,11 +54,11 @@ const Language = () => {
     <Fragment>
       <Tooltip title={t('common:tooltip_language')}>
         <Button
-          style={{ position: 'fixed', bottom: '1em', right: '1em' }}
+          style={{ position: 'fixed', bottom: '0.2em', right: '0.2em' }}
           onClick={handleClickOpen}
         >
           <Badge style={{ color: 'brown' }} badgeContent={language} >
-            <LanguageIcon style={{ color: 'white' }} />
+            <LanguageIcon style={{ color: 'green' }} />
           </Badge>
         </Button>
       </Tooltip>
@@ -87,7 +87,7 @@ const Language = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Close
+            {t('common:lbl_close')}
           </Button>
         </DialogActions>
       </Dialog>

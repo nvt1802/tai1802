@@ -7,6 +7,7 @@
     "kr": "韩国人",
     "vn": "越南语"
   },
+  "lbl_close": "关闭",
   "dialog_title_language": "设置语言",
   "tooltip_language": "改变语言",
   "title_change_language": "您可以更改整个网站的语言",
