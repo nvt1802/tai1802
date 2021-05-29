@@ -28,7 +28,8 @@ const LoginPage = (props) => {
   const {
     history,
     user,
-    loginWithGoogle,
+    signInWithGoogle,
+    signInWithEmailAndPassword
   } = props
   const classes = useStyles()
   const { t } = useTranslation(['login', 'common'])
@@ -58,7 +59,7 @@ const LoginPage = (props) => {
 
   const handleLoginWithGoogle = (event) => {
     event.preventDefault()
-    loginWithGoogle()
+    signInWithGoogle()
   }
 
   const handleLoginWithFacebook = (event) => {
@@ -67,7 +68,8 @@ const LoginPage = (props) => {
   }
 
   const onSubmit = data => {
-    firebase.auth().loginWithEmailAndPassword(data?.email, data?.password)
+    console.log(firebase.auth())
+    signInWithEmailAndPassword(data?.email, data?.password)
       .then((res) => history?.push('/'))
       .catch(error => {
         console.log(error?.message)

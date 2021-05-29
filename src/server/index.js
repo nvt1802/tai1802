@@ -1,24 +1,47 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Switch } from "react-router-dom"
 import routes, { RouteWithSubRoutes } from 'server/route'
-import { connect } from 'react-redux'
 import Header from 'layout/header'
 import Footer from 'layout/footer'
+import { providers, firebaseAppAuth } from 'firebaseConfig'
+import withFirebaseAuth from 'react-with-firebase-auth'
+import 'firebase/auth'
+import { Backdrop, CircularProgress, makeStyles } from '@material-ui/core'
+import When from 'components/Condition/When'
 
-function Server() {
+function Server(props) {
+  const classes = useStyles()
+  const { user } = props
   return (
-    <Router>
-      <Header />
-      <Switch>
-        {routes.map((route, i) => (
-          <RouteWithSubRoutes key={i} {...route} />
-        ))}
-      </Switch >
-      <Footer />
-    </Router >
-  );
+    <Fragment>
+      <When condition={typeof (user) !== 'undefined'}>
+        <Router>
+          <Header {...props} />
+          <Switch>
+            {routes.map((route, i) => (
+              <RouteWithSubRoutes key={i} {...route}{...props} />
+            ))}
+          </Switch >
+          <Footer />
+        </Router >
+      </When>
+      <When condition={typeof (user) === 'undefined'}>
+        <Backdrop className={classes.backdrop} open={true}>
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      </When>
+    </Fragment>
+  )
 }
 
-const mapDispatchToProps = () => ({})
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
+}));
 
-export default connect(null, mapDispatchToProps)(Server)
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(Server)

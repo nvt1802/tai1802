@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 export const HomePage = () => {
   return (
     <div style={{ height: '1000px' }}>
-
+      TO BE UPDATE
     </div>
   )
 }
