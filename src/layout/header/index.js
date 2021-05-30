@@ -73,21 +73,30 @@ export default function Header(props) {
   const classes = useStyles()
   const { t } = useTranslation('header')
   const [anchorEl, setAnchorEl] = useState(null)
-  const [position, setPosition] = useState('relative')
   const [isOpenSidebar, setOpenSidebar] = React.useState(false)
   const maxMm = useMediaQuery('(max-width:768px)')
   const minLg = useMediaQuery('(min-width:768px)')
 
   useEffect(() => {
+    const headerElement = document.getElementsByTagName('header')[0]
+    headerElement.style.backgroundColor = 'transparent'
+    headerElement.style.boxShadow = 'unset'
+    headerElement.style.color = 'white'
     window.addEventListener("scroll", headerColorChange)
   })
 
   const headerColorChange = () => {
+    const headerElement = document.getElementsByTagName('header')[0]
     const windowsScrollTop = window.pageYOffset
     if (windowsScrollTop > 150) {
-      setPosition('fixed')
+      headerElement.style.backgroundColor = 'white'
+      headerElement.style.boxShadow = '0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)'
+      headerElement.style.color = 'black'
+      headerElement.style.borderRadius = '0 0 10px 10px'
     } else {
-      setPosition('relative')
+      headerElement.style.backgroundColor = 'transparent'
+      headerElement.style.boxShadow = 'unset'
+      headerElement.style.color = 'white'
     }
   }
 
@@ -189,7 +198,13 @@ export default function Header(props) {
 
   return (
     <div>
-      <AppBar position={position} style={{ color: 'blue', backgroundColor: 'white' }}>
+      <AppBar
+        position={'fixed'}
+        style={{
+          color: 'blue',
+          backgroundColor: 'white',
+        }}
+      >
         {renderToolBar()}
       </AppBar>
       <Sidebar isOpen={isOpenSidebar} toggleDrawer={toggleDrawer} />

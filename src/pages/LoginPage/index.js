@@ -14,7 +14,7 @@ import {
   useMediaQuery
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import BackGroundImage from 'assets/image/bgLogin/bg-login-1.jpg'
+import BackGroundImage from 'assets/image/bgLogin/bg-login-2.jpg'
 import { Visibility, VisibilityOff, Person, LockRounded } from '@material-ui/icons'
 import firebase from 'firebase/app'
 import 'firebase/auth'
