@@ -15,7 +15,7 @@ import LanguageIcon from '@material-ui/icons/LanguageRounded'
 import ComboBox from 'components/Combobox'
 
 
-const Language = () => {
+const LanguagePopup = () => {
   const { t, i18n } = useTranslation('common')
   const [language, setLanguage] = useState(localStorage.getItem('lng') || 'vn')
   const [open, setOpen] = useState(false)
@@ -95,4 +95,4 @@ const Language = () => {
   )
 }
 
-export default Language
+export default LanguagePopup

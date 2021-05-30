@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { Fragment, useState } from "react"
 import {
   AppBar,
   Tab,
@@ -11,6 +11,8 @@ import {
   LanguageOutlined as LanguageIcon
 } from "@material-ui/icons"
 import { useTranslation } from "react-i18next"
+import SetingLanguageForm from 'components/Language/Form'
+import SettingsBackGroundLogin from 'components/Settings/SettingsBackGroundLogin'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -34,7 +36,8 @@ function TabPanel(props) {
 
 export default function SettingsTabs() {
   const [value, setValue] = useState(0)
-  const { t } = useTranslation('settings')
+
+  const { t } = useTranslation(['common', 'settings'])
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -57,10 +60,10 @@ export default function SettingsTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <SettingsBackGroundLogin />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <SetingLanguageForm />
       </TabPanel>
     </>
   )
