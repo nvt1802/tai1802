@@ -45,6 +45,10 @@ const RegisterPage = (props) => {
   const maxMd = useMediaQuery('(max-width:920px)')
   const minLg = useMediaQuery('(min-width:920px)')
 
+  useEffect(() => {
+    document.title = t('register:title')
+  })
+
   const checkSize = () => {
     return maxMd && !minLg
   }

@@ -19,7 +19,7 @@ import 'firebase/auth'
 import { Alert } from '@material-ui/lab'
 
 const Language = ({ status, setStatus }) => {
-  const { t } = useTranslation('common', 'forgot_password', 'login')
+  const { t } = useTranslation(['common', 'forgot_password', 'login'])
   const [isDisable, setDisable] = useState(false)
   const [openAlert, setOpenAlert] = useState(false)
 
