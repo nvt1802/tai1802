@@ -112,7 +112,7 @@ const RegisterPage = (props) => {
             }}
           >
             <img
-              src={BackGroundImage}
+              src={localStorage.getItem('bgRegister') || BackGroundImage}
               alt="bg-login"
               style={{
                 margin: 'auto',

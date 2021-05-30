@@ -8,7 +8,7 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import 'firebase/auth'
 import { Backdrop, CircularProgress, makeStyles } from '@material-ui/core'
 import When from 'components/Condition/When'
-import Language from 'components/Language'
+import LanguagePopup from 'components/Language/Popup'
 import Version from 'components/Version'
 
 function Server(props) {
@@ -31,7 +31,7 @@ function Server(props) {
           </When>
           <When condition={typeof (user) === 'undefined' || user === null}>
             <Version />
-            <Language />
+            <LanguagePopup />
           </When>
         </Router >
       </When>
