@@ -63,13 +63,17 @@ export default function Header(props) {
       headerElement.style.color = 'black'
       headerElement.style.borderRadius = '0 0 10px 10px'
       homePageElement.style.color = 'black'
-      settingsPageElement.style.color = 'black'
+      if (typeof settingsPageElement !== 'undefined') {
+        settingsPageElement.style.color = 'black'
+      }
     } else {
       headerElement.style.backgroundColor = 'transparent'
       headerElement.style.boxShadow = 'unset'
       headerElement.style.color = 'white'
       homePageElement.style.color = 'white'
-      settingsPageElement.style.color = 'white'
+      if (typeof settingsPageElement !== 'undefined' && settingsPageElement) {
+        settingsPageElement.style.color = 'white'
+      }
     }
   }
 
