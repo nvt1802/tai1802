@@ -15,5 +15,8 @@
     "email_format": "Email phải là một email hợp lệ",
     "message_require": "{{field}} là một trường bắt buộc",
     "password_length": "Mật khẩu quá ngắn"
-  }
+  },
+  "title_logout": "Xác nhận đăng xuất",
+  "text_logout": "Bạn có muốn đăng xuất không",
+  "btn_confirm": "Xác nhận"
 }

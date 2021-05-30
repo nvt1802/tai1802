@@ -1,5 +1,6 @@
 {
   "title_page": "主页",
   "btn_setting": "设置",
-  "btn_logout": "登出"
+  "btn_logout": "登出",
+  "btn_bg_login": "登录页面背景"
 }

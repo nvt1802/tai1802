@@ -6,13 +6,14 @@ import {
   Divider,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Avatar
 } from '@material-ui/core'
-
 import {
-  MoveToInbox as InboxIcon,
-  Mail as MailIcon
+  ExitToApp as LogoutIcon,
+  Settings as SettingsIcon
 } from '@material-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles({
   list: {
@@ -23,10 +24,11 @@ const useStyles = makeStyles({
   },
 })
 
-export default function Sidebar({ isOpen, toggleDrawer }) {
+export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
   const classes = useStyles()
+  const { t } = useTranslation('header', 'common')
 
-  const list = () => (
+  const list = (props) => (
     <div
       className={classes.list}
       role="presentation"
@@ -34,21 +36,32 @@ export default function Sidebar({ isOpen, toggleDrawer }) {
       onKeyDown={toggleDrawer()}
     >
       <List>
-        {['To be Update'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button>
+          <ListItemIcon>
+            <Avatar alt={user?.displayName} src={user?.photoURL} />
+          </ListItemIcon>
+          <ListItemText primary={user?.displayName} />
+        </ListItem>
       </List>
+
       <Divider />
+
       <List>
-        {['To be Update'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button>
+          <ListItemIcon>
+            <SettingsIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary={t('header:btn_setting')} />
+        </ListItem>
+      </List>
+
+      <List onClick={handleLogout}>
+        <ListItem button>
+          <ListItemIcon>
+            <LogoutIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary={t('header:btn_logout')} />
+        </ListItem>
       </List>
     </div>
   )
@@ -56,7 +69,7 @@ export default function Sidebar({ isOpen, toggleDrawer }) {
   return (
     <div>
       <SwipeableDrawer
-        anchor={'left'}
+        anchor={'right'}
         open={isOpen}
         onClose={toggleDrawer()}
         onOpen={toggleDrawer()}
