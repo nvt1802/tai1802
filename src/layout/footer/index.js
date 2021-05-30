@@ -79,6 +79,18 @@ const Footer = () => {
       <Divider className={classes.divider} />
       <div className={classes.bottom}>
         <MDBContainer fluid className={classes.mt2}>
+          <span
+            style={{
+              fontSize: '0.9em',
+              fontWeight: 'bold',
+              fontStyle: 'italic',
+              textDecoration: 'underline',
+              color: '#ffff',
+              marginRight: '1em'
+            }}
+          >
+            {`Ver ${process.env?.REACT_APP_VERSION}`}
+          </span>
           {`Copyright © ${new Date().getFullYear()}  All rights reserved`}
         </MDBContainer>
       </div>

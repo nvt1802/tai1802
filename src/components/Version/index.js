@@ -3,7 +3,7 @@ import React from 'react'
 const Version = () => {
   return (
     <div style={{
-      position: 'absolute',
+      position: 'fixed',
       bottom: '0.5em',
       left: '0.5em',
       opacity: 0.8,

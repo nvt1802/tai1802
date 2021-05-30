@@ -6,24 +6,20 @@ import {
   Typography,
   IconButton,
   MenuItem,
-  Menu,
   Grid,
   Avatar,
-  ListItemIcon,
-  ListItemText,
 } from '@material-ui/core'
-import { withStyles } from '@material-ui/core/styles'
 import {
   Menu as MenuIcon,
-  ExitToApp,
-  ListAlt,
-  Settings,
-  AccountBox as AccountBoxICon
+  ExitToApp as LogoutIcon,
+  Settings as SettingsIcon
 } from '@material-ui/icons'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { useTranslation } from 'react-i18next'
 import Sidebar from 'layout/sidebar'
 import When from 'components/Condition/When'
+import { Link } from 'react-router-dom'
+import DialogConfirm from 'components/DialogConfirm'
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
@@ -34,46 +30,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const StyledMenu = withStyles({
-  paper: {
-    border: '1px solid #d3d4d5',
-  },
-})((props) => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: 'bottom',
-      horizontal: 'center',
-    }}
-    transformOrigin={{
-      vertical: 'top',
-      horizontal: 'center',
-    }}
-    {...props}
-  />
-))
-
-const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    '&:focus': {
-      backgroundColor: theme.palette.primary.main,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.palette.common.white,
-      },
-    },
-  },
-}))(MenuItem)
-
 export default function Header(props) {
   const {
     user,
     signOut
   } = props
   const classes = useStyles()
-  const { t } = useTranslation('header')
-  const [anchorEl, setAnchorEl] = useState(null)
-  const [isOpenSidebar, setOpenSidebar] = React.useState(false)
+  const { t } = useTranslation('header', 'common')
+  const [isOpenSidebar, setOpenSidebar] = useState(false)
+  const [isShowDialog, setDialog] = useState(false)
   const maxMm = useMediaQuery('(max-width:768px)')
   const minLg = useMediaQuery('(min-width:768px)')
 
@@ -83,7 +48,7 @@ export default function Header(props) {
     headerElement.style.boxShadow = 'unset'
     headerElement.style.color = 'white'
     window.addEventListener("scroll", headerColorChange)
-  })
+  }, [])
 
   const headerColorChange = () => {
     const headerElement = document.getElementsByTagName('header')[0]
@@ -100,114 +65,97 @@ export default function Header(props) {
     }
   }
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
   const toggleDrawer = () => () => {
     setOpenSidebar(!isOpenSidebar)
   }
 
   const handleLogout = () => {
-    handleClose()
+    setDialog(true)
+  }
+
+  const handleConfirm = () => {
+    setDialog(false)
     signOut()
   }
 
-  const renderMenu = () => (
-    <StyledMenu
-      id="customized-menu"
-      anchorEl={anchorEl}
-      keepMounted
-      open={Boolean(anchorEl)}
-      onClose={handleClose}
-    >
-      <StyledMenuItem>
-        <ListItemIcon>
-          <AccountBoxICon fontSize="small" />
-        </ListItemIcon>
-        <ListItemText primary="Profile" />
-      </StyledMenuItem>
-      <StyledMenuItem>
-        <ListItemIcon>
-          <ExitToApp fontSize="small" />
-        </ListItemIcon>
-        <ListItemText
-          onClick={handleLogout}
-          primary={t('header:btn_logout')}
-        />
-      </StyledMenuItem>
-    </StyledMenu>
-  )
+  const handleCloseDialog = () => {
+    setDialog(false)
+  }
 
   const renderToolBar = () => (
-    <Toolbar>
-      <IconButton
-        edge="start"
-        className={classes.menuButton}
-        color="inherit"
-        aria-label="menu"
-        onClick={toggleDrawer()}
-      >
-        <MenuIcon />
-      </IconButton>
+    <Toolbar
+      style={{
+        alignItems: 'center',
+        paddingLeft: '6em',
+        paddingRight: '6em'
+      }}
+    >
       <Typography variant="h6" className={classes.title}>
-        {t('header:title_page')}
+        <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+          {t('header:title_page')}
+        </Link>
       </Typography>
+
       <When condition={typeof (user) !== 'undefined' && user !== null}>
         <div>
-          <When condition={maxMm}>
-            <IconButton
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="inherit"
-            >
-              <ListAlt />
-            </IconButton>
-            {renderMenu()}
-          </When>
-
-          <When condition={minLg}>
+          <When condition={minLg && !maxMm}>
             <Grid container>
               <Grid style={{ margin: 'auto' }}>
-                <MenuItem onClick={handleClose}>
-                  <Settings />
-                  <span style={{ marginLeft: '0.5em' }}>{t('header:btn_setting')}</span>
-                </MenuItem>
-              </Grid>
-              <Grid style={{ margin: 'auto' }}>
-                <MenuItem onClick={handleMenu}>
+                <MenuItem>
                   <Avatar alt={user?.displayName} src={user?.photoURL} />
                   <span style={{ marginLeft: '0.5em' }}>
                     {user?.displayName}
                   </span>
                 </MenuItem>
-                {renderMenu()}
+              </Grid>
+
+              <Grid style={{ margin: 'auto' }}>
+                <MenuItem>
+                  <SettingsIcon fontSize="small" />
+                  <span style={{ marginLeft: '0.5em' }}>{t('header:btn_setting')}</span>
+                </MenuItem>
+              </Grid>
+
+              <Grid style={{ margin: 'auto' }}>
+                <MenuItem onClick={handleLogout}>
+                  <LogoutIcon fontSize="small" />
+                  <span style={{ marginLeft: '0.5em' }}>{t('header:btn_logout')}</span>
+                </MenuItem>
               </Grid>
             </Grid>
           </When>
         </div>
       </When>
-    </Toolbar>
+
+      <When condition={!minLg && maxMm}>
+        <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleDrawer()}
+        >
+          <MenuIcon />
+        </IconButton>
+      </When>
+    </Toolbar >
   )
 
   return (
     <div>
-      <AppBar
-        position={'fixed'}
-        style={{
-          color: 'blue',
-          backgroundColor: 'white',
-        }}
-      >
+      <AppBar position={'fixed'} >
         {renderToolBar()}
       </AppBar>
-      <Sidebar isOpen={isOpenSidebar} toggleDrawer={toggleDrawer} />
+      <Sidebar user={user} handleLogout={handleLogout} isOpen={isOpenSidebar} toggleDrawer={toggleDrawer} />
+      <DialogConfirm
+        open={isShowDialog}
+        handleClickConfirm={handleConfirm}
+        handleClose={handleCloseDialog}
+        title={t('common:title_logout')}
+        content={t('common:text_logout')}
+        labelBtnClose={t('common:lbl_close')}
+        labelBtnConfirm={t('common:btn_confirm')}
+      />
     </div>
   )
 }

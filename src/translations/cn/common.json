@@ -15,5 +15,8 @@
     "email_format": "电子邮件必须是有效的电子邮件",
     "message_require": "{{field}} 是必填字段",
     "password_length": "密码太短"
-  }
+  },
+  "title_logout": "退出确认",
+  "text_logout": "您要退出吗？",
+  "btn_confirm": "确认"
 }

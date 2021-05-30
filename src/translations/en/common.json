@@ -15,5 +15,8 @@
     "email_format": "Email must be a valid email",
     "message_require": "{{field}} is a required field",
     "password_length": "The password is too short"
-  }
+  },
+  "title_logout": "Sign out confirmation",
+  "text_logout": "Do you want to sign out?",
+  "btn_confirm": "Confirm"
 }

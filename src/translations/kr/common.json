@@ -15,5 +15,8 @@
     "email_format": "이메일은 유효한 이메일이어야합니다.",
     "message_require": "{{field}} 필수 필드입니다.",
     "password_length": "비밀번호가 너무 짧습니다"
-  }
+  },
+  "title_logout": "로그 아웃 확인",
+  "text_logout": "로그 아웃 하시겠습니까?",
+  "btn_confirm": "확인"
 }
