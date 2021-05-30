@@ -1,12 +1,12 @@
 {
-  "title": "登入",
-  "btn_sign_in": "登入",
+  "title": "登记",
+  "btn_sign_in": "登记",
   "lbl_forgot_password": "忘记密码 ？",
-  "lbl_sign_up": "已经有账户？ 登入",
+  "lbl_register": "已经有账户？ 登入",
   "validate": {
     "auth/weak-password": "密码应至少为 6 个字符",
     "auth/email-already-in-use": "该电子邮件地址已被另一个帐户使用"
   },
-  "lbl_sign_up_success": "成功建立帐户！",
+  "lbl_register_success": "成功建立帐户！",
   "lbl_login_now": "立即登录"
 }

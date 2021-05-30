@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PageWrapper from 'components/PageWapper'
+import BackgroundImage from 'assets/image/bgHome/bg-home-1.jpg'
 
 export const HomePage = () => {
   return (
-    <div style={{ height: '1000px' }}>
-      TO BE UPDATE
-    </div>
+    <PageWrapper backgroundImage={BackgroundImage}>
+      Hello
+    </PageWrapper>
   )
 }
 

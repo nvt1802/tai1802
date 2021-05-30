@@ -29,7 +29,7 @@ const Language = ({ status, setStatus }) => {
       .email(t('common:validate.email_format'))
   });
 
-  const { handleSubmit, formState: { errors }, control } = useForm({
+  const { handleSubmit, formState: { errors }, control, setError } = useForm({
     resolver: yupResolver(schema)
   });
 
@@ -45,7 +45,10 @@ const Language = ({ status, setStatus }) => {
       setStatus(false);
       setOpenAlert(true)
     }).catch(function (error) {
-      // An error happened.
+      setError('email', {
+        type: "manual",
+        message: t(`login:validate.${error?.code}`)
+      });
     });
   }
 
@@ -57,7 +60,7 @@ const Language = ({ status, setStatus }) => {
         aria-labelledby="max-width-dialog-title"
       >
         <DialogTitle id="max-width-dialog-title">{t('forgot_password:title')}</DialogTitle>
-        <DialogContent>
+        <DialogContent style={{ width: '440px' }}>
           <DialogContentText>
             {t('forgot_password:lbl_forgot_password')}
           </DialogContentText>

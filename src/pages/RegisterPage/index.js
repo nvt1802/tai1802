@@ -11,10 +11,11 @@ import {
   IconButton,
   Divider,
   FormHelperText,
-  useMediaQuery
+  useMediaQuery,
+  Snackbar
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import BackGroundImage from 'assets/image/bgLogin/bg-login-2.jpg'
+import BackGroundImage from 'assets/image/bgLogin/bg-login-1.jpg'
 import { Visibility, VisibilityOff, Person, LockRounded } from '@material-ui/icons'
 import firebase from 'firebase/app'
 import 'firebase/auth'
@@ -24,20 +25,22 @@ import * as yup from "yup"
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import ForgotPassowd from 'components/ForgotPassowd'
+import { Alert } from '@material-ui/lab'
 
-const LoginPage = (props) => {
+const RegisterPage = (props) => {
   const {
     history,
     user,
     signInWithGoogle,
-    signInWithEmailAndPassword
+    signOut
   } = props
   const classes = useStyles()
-  const { t } = useTranslation(['login', 'common'])
+  const { t } = useTranslation(['login', 'common', 'register'])
   const [showPassword, setShowPassword] = useState(false)
   const [focusEmail, setFocusEmail] = useState(false)
   const [focusPassword, setFocusPassword] = useState(false)
   const [showForgotPassword, setShowForgotPassword] = useState(false)
+  const [openAlert, setOpenAlert] = useState(false)
   const oldPhotoURL = localStorage.getItem('photoURL') || ''
   const maxMd = useMediaQuery('(max-width:920px)')
   const minLg = useMediaQuery('(min-width:920px)')
@@ -76,15 +79,15 @@ const LoginPage = (props) => {
   }
 
   const onSubmit = data => {
-    console.log(firebase.auth())
-    signInWithEmailAndPassword(data?.email, data?.password)
-      .then((res) => history?.push('/'))
-      .catch(error => {
-        setError('errorAfterSubmit', {
-          type: "manual",
-          message: t(`login:validate.${error?.code}`)
-        });
-      })
+    firebase.auth().createUserWithEmailAndPassword(data?.email, data?.password).then((userCredential) => {
+      setOpenAlert(true)
+      signOut()
+    }).catch((error) => {
+      setError('errorAfterSubmit', {
+        type: "manual",
+        message: t(`register:validate.${error?.code}`)
+      });
+    });
   }
 
   return (
@@ -134,7 +137,7 @@ const LoginPage = (props) => {
             <div className={classes.paper}>
               <Avatar className={classes.avatar} src={oldPhotoURL} />
               <Typography component="h1" variant="h5">
-                {t('login:title')}
+                {t('register:title')}
               </Typography>
               <form className={classes.form} noValidate method="POST" onSubmit={handleSubmit(onSubmit)} >
                 <Controller
@@ -250,12 +253,12 @@ const LoginPage = (props) => {
                 <Grid container >
                   <Grid item xs={6}>
                     <Link to="#" variant="body2" className={classes.link} onClick={() => setShowForgotPassword(true)}>
-                      {t('login:lbl_forgot_password')}
+                      {t('register:lbl_forgot_password')}
                     </Link>
                   </Grid>
                   <Grid item xs={6}>
-                    <Link to="/register" variant="body2" className={classes.link}>
-                      {t('login:lbl_sign_in')}
+                    <Link to="/login" variant="body2" className={classes.link}>
+                      {t('register:lbl_register')}
                     </Link>
                   </Grid>
                 </Grid>
@@ -265,6 +268,14 @@ const LoginPage = (props) => {
           </Container >
         </div>
       </div>
+      <Snackbar open={openAlert} autoHideDuration={6000} onClose={() => setOpenAlert(false)}>
+        <Alert onClose={() => setOpenAlert(false)} severity="success">
+          {`${t('register:lbl_register_success')}, `}
+          <Link to="/login" variant="body2" className={classes.link}>
+            {t('register:lbl_login_now')}
+          </Link>
+        </Alert>
+      </Snackbar>
     </Fragment>
   )
 }
@@ -316,4 +327,4 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default LoginPage
+export default RegisterPage

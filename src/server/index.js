@@ -19,7 +19,9 @@ function Server(props) {
       <When condition={typeof (user) !== 'undefined'}>
         <Router>
           <When condition={typeof (user) !== 'undefined' && user !== null}>
-            <Header {...props} />
+            {/* <div style={{ position: 'relative', paddingTop: '64px' }}> */}
+              <Header {...props} />
+            {/* </div> */}
           </When>
           <Switch>
             {routes.map((route, i) => (
