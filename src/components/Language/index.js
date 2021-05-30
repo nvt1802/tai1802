@@ -68,7 +68,7 @@ const Language = () => {
         aria-labelledby="max-width-dialog-title"
       >
         <DialogTitle id="max-width-dialog-title">{t('common:dialog_title_language')}</DialogTitle>
-        <DialogContent style={{ minWidth: '440px', width: '440px' }}>
+        <DialogContent style={{ width: '440px' }}>
           <DialogContentText>
             {t('common:title_change_language')}
           </DialogContentText>

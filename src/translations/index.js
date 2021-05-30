@@ -11,11 +11,11 @@ import login_jp from "translations/jp/login.json"
 import login_kr from "translations/kr/login.json"
 import login_vn from "translations/vn/login.json"
 
-import signup_cn from "translations/cn/signup.json"
-import signup_en from "translations/en/signup.json"
-import signup_jp from "translations/jp/signup.json"
-import signup_kr from "translations/kr/signup.json"
-import signup_vn from "translations/vn/signup.json"
+import register_cn from "translations/cn/register.json"
+import register_en from "translations/en/register.json"
+import register_jp from "translations/jp/register.json"
+import register_kr from "translations/kr/register.json"
+import register_vn from "translations/vn/register.json"
 
 import forgot_password_cn from "translations/cn/forgot-password.json"
 import forgot_password_en from "translations/en/forgot-password.json"
@@ -36,35 +36,35 @@ i18next.init({
     cn: {
       common: common_cn,
       login: login_cn,
-      signup: signup_cn,
+      register: register_cn,
       forgot_password: forgot_password_cn,
       header: header_cn
     },
     en: {
       common: common_en,
       login: login_en,
-      signup: signup_en,
+      register: register_en,
       forgot_password: forgot_password_en,
       header: header_en
     },
     jp: {
       common: common_jp,
       login: login_jp,
-      signup: signup_jp,
+      register: register_jp,
       forgot_password: forgot_password_jp,
       header: header_jp
     },
     kr: {
       common: common_kr,
       login: login_kr,
-      signup: signup_kr,
+      register: register_kr,
       forgot_password: forgot_password_kr,
       header: header_kr
     },
     vn: {
       common: common_vn,
       login: login_vn,
-      signup: signup_vn,
+      register: register_vn,
       forgot_password: forgot_password_vn,
       header: header_vn
     },
