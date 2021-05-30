@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PageWrapper from 'components/PageWapper'
-import BackgroundImage from 'assets/image/bgHome/bg-home-1.jpg'
+import { useTranslation } from 'react-i18next'
 
-export const HomePage = () => {
+const HomePage = () => {
+  const { t } = useTranslation('home')
+
+  useEffect(() => {
+    document.title = t('home:title')
+  })
+
   return (
-    <PageWrapper backgroundImage={BackgroundImage}>
+    <PageWrapper>
       Hello
     </PageWrapper>
   )

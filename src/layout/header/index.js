@@ -36,7 +36,7 @@ export default function Header(props) {
     signOut
   } = props
   const classes = useStyles()
-  const { t } = useTranslation('header', 'common')
+  const { t } = useTranslation(['header', 'common'])
   const [isOpenSidebar, setOpenSidebar] = useState(false)
   const [isShowDialog, setDialog] = useState(false)
   const maxMm = useMediaQuery('(max-width:768px)')
@@ -44,24 +44,32 @@ export default function Header(props) {
 
   useEffect(() => {
     const headerElement = document.getElementsByTagName('header')[0]
+    const homePageElement = document.getElementById('home-page')
     headerElement.style.backgroundColor = 'transparent'
     headerElement.style.boxShadow = 'unset'
     headerElement.style.color = 'white'
+    homePageElement.style.color = 'white'
     window.addEventListener("scroll", headerColorChange)
   }, [])
 
   const headerColorChange = () => {
     const headerElement = document.getElementsByTagName('header')[0]
+    const homePageElement = document.getElementById('home-page')
+    const settingsPageElement = document.getElementById('settings-page')
     const windowsScrollTop = window.pageYOffset
     if (windowsScrollTop > 150) {
       headerElement.style.backgroundColor = 'white'
       headerElement.style.boxShadow = '0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)'
       headerElement.style.color = 'black'
       headerElement.style.borderRadius = '0 0 10px 10px'
+      homePageElement.style.color = 'black'
+      settingsPageElement.style.color = 'black'
     } else {
       headerElement.style.backgroundColor = 'transparent'
       headerElement.style.boxShadow = 'unset'
       headerElement.style.color = 'white'
+      homePageElement.style.color = 'white'
+      settingsPageElement.style.color = 'white'
     }
   }
 
@@ -91,7 +99,7 @@ export default function Header(props) {
       }}
     >
       <Typography variant="h6" className={classes.title}>
-        <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+        <Link to="/" id="home-page" style={{ textDecoration: 'none' }}>
           {t('header:title_page')}
         </Link>
       </Typography>
@@ -112,7 +120,9 @@ export default function Header(props) {
               <Grid style={{ margin: 'auto' }}>
                 <MenuItem>
                   <SettingsIcon fontSize="small" />
-                  <span style={{ marginLeft: '0.5em' }}>{t('header:btn_setting')}</span>
+                  <Link to="/settings" id="settings-page" style={{ textDecoration: 'none', color: 'white' }}>
+                    <span style={{ marginLeft: '0.5em' }}>{t('header:btn_setting')}</span>
+                  </Link>
                 </MenuItem>
               </Grid>
 

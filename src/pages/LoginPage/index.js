@@ -33,7 +33,7 @@ const LoginPage = (props) => {
     signInWithEmailAndPassword
   } = props
   const classes = useStyles()
-  const { t } = useTranslation(['login', 'common'])
+  const { t } = useTranslation(['login', 'common', 'page'])
   const [showPassword, setShowPassword] = useState(false)
   const [focusEmail, setFocusEmail] = useState(false)
   const [focusPassword, setFocusPassword] = useState(false)
@@ -41,6 +41,10 @@ const LoginPage = (props) => {
   const oldPhotoURL = localStorage.getItem('photoURL') || ''
   const maxMd = useMediaQuery('(max-width:920px)')
   const minLg = useMediaQuery('(min-width:920px)')
+
+  useEffect(() => {
+    document.title = t('login:title')
+  })
 
   const checkSize = () => {
     return maxMd && !minLg

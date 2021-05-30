@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 
 export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
   const classes = useStyles()
-  const { t } = useTranslation('header', 'common')
+  const { t } = useTranslation(['header', 'common'])
 
   const list = (props) => (
     <div

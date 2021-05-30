@@ -3,13 +3,13 @@ import 'firebase/database'
 import 'firebase/storage'
 
 const config = {
-  apiKey: "AIzaSyAjYU3x7GY_fWbkXP9VifDxRL_E5fm5KXI",
-  authDomain: "tai1802.firebaseapp.com",
-  projectId: "tai1802",
-  storageBucket: "tai1802.appspot.com",
-  messagingSenderId: "664708445564",
-  appId: "1:664708445564:web:3fcd1e054b8eb8e00820f9",
-  measurementId: "G-1LPWF3HBGT"
+  apiKey: process.env?.REACT_APP_APIKEY,
+  authDomain: process.env?.REACT_APP_AUTHDOMAIN,
+  projectId: process.env?.REACT_APP_PROJECTID,
+  storageBucket: process.env?.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env?.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env?.REACT_APP_APPID,
+  measurementId: process.env?.REACT_APP_MEASUREMENTID
 }
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
