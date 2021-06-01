@@ -61,7 +61,7 @@ export default function Header(props) {
       headerElement.style.color = "black"
       headerElement.style.borderRadius = "0 0 10px 10px"
       homePageElement.style.color = "black"
-      if (typeof settingsPageElement !== "undefined") {
+      if (typeof settingsPageElement !== "undefined" && settingsPageElement) {
         settingsPageElement.style.color = "black"
       }
     } else {

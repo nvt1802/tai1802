@@ -14,6 +14,7 @@ import {
   Settings as SettingsIcon,
 } from "@material-ui/icons"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 
 const useStyles = makeStyles({
   list: {
@@ -27,6 +28,10 @@ const useStyles = makeStyles({
 export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
   const classes = useStyles()
   const { t } = useTranslation(["header", "common"])
+
+  const handleSetting = () => {
+    document.getElementById("pushSettings").click()
+  }
 
   const list = (props) => (
     <div
@@ -46,7 +51,7 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
 
       <Divider />
 
-      <List>
+      <List onClick={handleSetting}>
         <ListItem button>
           <ListItemIcon>
             <SettingsIcon fontSize="small" />
@@ -76,6 +81,14 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
       >
         {list()}
       </SwipeableDrawer>
+      <Link to="/settings" id="pushSettings" style={{ display: "none" }} />
+      <Link
+        to="/settings"
+        id="pushSettings1"
+        style={{ position: "absolute", top: "50%", left: "50%" }}
+      >
+        CLICK
+      </Link>
     </div>
   )
 }
