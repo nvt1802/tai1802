@@ -1,17 +1,16 @@
-import React from 'react'
-import { TextField } from '@material-ui/core'
-import { Autocomplete } from '@material-ui/lab'
+import React from "react"
+import { TextField } from "@material-ui/core"
+import { Autocomplete } from "@material-ui/lab"
 
 const ComboBox = ({
-  id = '',
+  id = "",
   options = [],
-  label = '',
-  variant = 'outlined',
+  label = "",
+  variant = "outlined",
   width = 300,
   onChange,
-  value
+  value,
 }) => {
-
   return (
     <Autocomplete
       id={id}
@@ -22,11 +21,7 @@ const ComboBox = ({
       onChange={onChange}
       getOptionSelected={(option, value) => option.id === value.id}
       renderInput={(params) => (
-        <TextField
-          {...params}
-          label={label}
-          variant={variant}
-        />
+        <TextField {...params} label={label} variant={variant} />
       )}
     />
   )

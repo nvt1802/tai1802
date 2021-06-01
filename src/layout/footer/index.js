@@ -1,55 +1,54 @@
-import React from 'react'
-import clsx from 'clsx'
+import React from "react"
+import clsx from "clsx"
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
-import { Divider, makeStyles } from '@material-ui/core'
+import { Divider, makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles({
   divider: {
-    width: '90%',
-    margin: 'auto',
-    backgroundColor: '#ffffff'
+    width: "90%",
+    margin: "auto",
+    backgroundColor: "#ffffff",
   },
   container: {
-    color: '#ffffff',
-    textAlign: 'left'
+    color: "#ffffff",
+    textAlign: "left",
   },
   textWhile: {
-    color: '#ffffff'
+    color: "#ffffff",
   },
   footer: {
-    paddingTop: '0.5em',
-    backgroundColor: '#000000'
+    paddingTop: "0.5em",
+    backgroundColor: "#000000",
   },
   textAlign: {
-    textAlign: 'left'
+    textAlign: "left",
   },
   listUnstyled: {
     paddingLeft: 0,
-    listStyle: 'none'
+    listStyle: "none",
   },
   row: {
-    display: 'flex',
-    justifyContent: 'space-around'
+    display: "flex",
+    justifyContent: "space-around",
   },
   colSize4: {
-    flex: '0 0 40%',
-    maxWidth: '40%'
+    flex: "0 0 40%",
+    maxWidth: "40%",
   },
   mr2: {
-    marginRight: '2em'
+    marginRight: "2em",
   },
   bottom: {
-    color: '#ffffff',
-    textAlign: 'center',
-    paddingBottom: '1rem'
+    color: "#ffffff",
+    textAlign: "center",
+    paddingBottom: "1rem",
   },
   mt2: {
-    marginTop: '2em'
-  }
+    marginTop: "2em",
+  },
 })
 
 const Footer = () => {
-
   const classes = useStyles()
 
   return (
@@ -81,12 +80,12 @@ const Footer = () => {
         <MDBContainer fluid className={classes.mt2}>
           <span
             style={{
-              fontSize: '0.9em',
-              fontWeight: 'bold',
-              fontStyle: 'italic',
-              textDecoration: 'underline',
-              color: '#ffff',
-              marginRight: '1em'
+              fontSize: "0.9em",
+              fontWeight: "bold",
+              fontStyle: "italic",
+              textDecoration: "underline",
+              color: "#ffff",
+              marginRight: "1em",
             }}
           >
             {`Ver ${process.env?.REACT_APP_VERSION}`}

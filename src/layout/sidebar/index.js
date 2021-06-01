@@ -1,5 +1,5 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
 import {
   SwipeableDrawer,
   List,
@@ -7,26 +7,26 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Avatar
-} from '@material-ui/core'
+  Avatar,
+} from "@material-ui/core"
 import {
   ExitToApp as LogoutIcon,
-  Settings as SettingsIcon
-} from '@material-ui/icons'
-import { useTranslation } from 'react-i18next'
+  Settings as SettingsIcon,
+} from "@material-ui/icons"
+import { useTranslation } from "react-i18next"
 
 const useStyles = makeStyles({
   list: {
     width: 250,
   },
   fullList: {
-    width: 'auto',
+    width: "auto",
   },
 })
 
 export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
   const classes = useStyles()
-  const { t } = useTranslation(['header', 'common'])
+  const { t } = useTranslation(["header", "common"])
 
   const list = (props) => (
     <div
@@ -51,7 +51,7 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
           <ListItemIcon>
             <SettingsIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary={t('header:btn_setting')} />
+          <ListItemText primary={t("header:btn_setting")} />
         </ListItem>
       </List>
 
@@ -60,7 +60,7 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
           <ListItemIcon>
             <LogoutIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary={t('header:btn_logout')} />
+          <ListItemText primary={t("header:btn_logout")} />
         </ListItem>
       </List>
     </div>
@@ -69,7 +69,7 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
   return (
     <div>
       <SwipeableDrawer
-        anchor={'right'}
+        anchor={"right"}
         open={isOpen}
         onClose={toggleDrawer()}
         onOpen={toggleDrawer()}
