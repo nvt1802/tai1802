@@ -41,6 +41,12 @@ import settings_jp from "translations/jp/settings.json"
 import settings_kr from "translations/kr/settings.json"
 import settings_vn from "translations/vn/settings.json"
 
+import videos_cn from "translations/cn/videos.json"
+import videos_en from "translations/en/videos.json"
+import videos_jp from "translations/jp/videos.json"
+import videos_kr from "translations/kr/videos.json"
+import videos_vn from "translations/vn/videos.json"
+
 i18next.init({
   interpolation: { escapeValue: false },
   lng: `${localStorage.getItem("lng") || "vn"}`,
@@ -53,6 +59,7 @@ i18next.init({
       header: header_cn,
       home: home_cn,
       settings: settings_cn,
+      videos: videos_cn,
     },
     en: {
       common: common_en,
@@ -62,6 +69,7 @@ i18next.init({
       header: header_en,
       home: home_en,
       settings: settings_en,
+      videos: videos_en,
     },
     jp: {
       common: common_jp,
@@ -71,6 +79,7 @@ i18next.init({
       header: header_jp,
       home: home_jp,
       settings: settings_jp,
+      videos: videos_jp,
     },
     kr: {
       common: common_kr,
@@ -80,6 +89,7 @@ i18next.init({
       header: header_kr,
       home: home_kr,
       settings: settings_kr,
+      videos: videos_kr,
     },
     vn: {
       common: common_vn,
@@ -89,6 +99,7 @@ i18next.init({
       header: header_vn,
       home: home_vn,
       settings: settings_vn,
+      videos: videos_vn,
     },
   },
 })

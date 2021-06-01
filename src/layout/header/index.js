@@ -13,6 +13,7 @@ import {
   Menu as MenuIcon,
   ExitToApp as LogoutIcon,
   Settings as SettingsIcon,
+  VideoLibrary as VideoLibraryIcon,
 } from "@material-ui/icons"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { useTranslation } from "react-i18next"
@@ -36,8 +37,8 @@ export default function Header(props) {
   const { t } = useTranslation(["header", "common"])
   const [isOpenSidebar, setOpenSidebar] = useState(false)
   const [isShowDialog, setDialog] = useState(false)
-  const maxMm = useMediaQuery("(max-width:768px)")
-  const minLg = useMediaQuery("(min-width:768px)")
+  const maxMm = useMediaQuery("(max-width:875px)")
+  const minLg = useMediaQuery("(min-width:875px)")
 
   useEffect(() => {
     const headerElement = document.getElementsByTagName("header")[0]
@@ -53,6 +54,7 @@ export default function Header(props) {
     const headerElement = document.getElementsByTagName("header")[0]
     const homePageElement = document.getElementById("home-page")
     const settingsPageElement = document.getElementById("settings-page")
+    const videosPageElement = document.getElementById("videos-page")
     const windowsScrollTop = window.pageYOffset
     if (windowsScrollTop > 150) {
       headerElement.style.backgroundColor = "white"
@@ -64,6 +66,9 @@ export default function Header(props) {
       if (typeof settingsPageElement !== "undefined" && settingsPageElement) {
         settingsPageElement.style.color = "black"
       }
+      if (typeof videosPageElement !== "undefined" && videosPageElement) {
+        videosPageElement.style.color = "black"
+      }
     } else {
       headerElement.style.backgroundColor = "transparent"
       headerElement.style.boxShadow = "unset"
@@ -71,6 +76,9 @@ export default function Header(props) {
       homePageElement.style.color = "white"
       if (typeof settingsPageElement !== "undefined" && settingsPageElement) {
         settingsPageElement.style.color = "white"
+      }
+      if (typeof videosPageElement !== "undefined" && videosPageElement) {
+        videosPageElement.style.color = "white"
       }
     }
   }
@@ -129,6 +137,21 @@ export default function Header(props) {
                   >
                     <span style={{ marginLeft: "0.5em" }}>
                       {t("header:btn_setting")}
+                    </span>
+                  </Link>
+                </MenuItem>
+              </Grid>
+
+              <Grid style={{ margin: "auto" }}>
+                <MenuItem>
+                  <VideoLibraryIcon fontSize="small" />
+                  <Link
+                    to="/videos"
+                    id="videos-page"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <span style={{ marginLeft: "0.5em" }}>
+                      {t("header:btn_videos")}
                     </span>
                   </Link>
                 </MenuItem>

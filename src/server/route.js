@@ -1,9 +1,13 @@
 import React from "react"
+import { Route } from "react-router-dom"
+
+// import pages
 import HomePage from "pages/HomePage"
 import LoginPage from "pages/LoginPage"
 import RegisterPage from "pages/RegisterPage"
 import SettingsPage from "pages/SettingsPage"
-import { Route } from "react-router-dom"
+import VideosPage from "pages/VideosPage"
+
 import AuthRoute from "server/AuthRoute"
 
 const routes = [
@@ -24,6 +28,13 @@ const routes = [
     exact: true,
     component: (props) => (
       <AuthRoute {...props} component={() => <SettingsPage {...props} />} />
+    ),
+  },
+  {
+    path: "/videos",
+    exact: true,
+    component: (props) => (
+      <AuthRoute {...props} component={() => <VideosPage {...props} />} />
     ),
   },
   {
