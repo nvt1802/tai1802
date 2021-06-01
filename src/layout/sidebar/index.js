@@ -12,6 +12,7 @@ import {
 import {
   ExitToApp as LogoutIcon,
   Settings as SettingsIcon,
+  VideoLibrary as VideoLibraryIcon,
 } from "@material-ui/icons"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
@@ -29,8 +30,12 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
   const classes = useStyles()
   const { t } = useTranslation(["header", "common"])
 
-  const handleSetting = () => {
+  const handlePushPageSettings = () => {
     document.getElementById("pushSettings").click()
+  }
+
+  const handlePushPageVideos = () => {
+    document.getElementById("pushVideos").click()
   }
 
   const list = (props) => (
@@ -51,12 +56,21 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
 
       <Divider />
 
-      <List onClick={handleSetting}>
+      <List onClick={handlePushPageSettings}>
         <ListItem button>
           <ListItemIcon>
             <SettingsIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary={t("header:btn_setting")} />
+        </ListItem>
+      </List>
+
+      <List onClick={handlePushPageVideos}>
+        <ListItem button>
+          <ListItemIcon>
+            <VideoLibraryIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary={t("header:btn_videos")} />
         </ListItem>
       </List>
 
@@ -82,13 +96,7 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
         {list()}
       </SwipeableDrawer>
       <Link to="/settings" id="pushSettings" style={{ display: "none" }} />
-      <Link
-        to="/settings"
-        id="pushSettings1"
-        style={{ position: "absolute", top: "50%", left: "50%" }}
-      >
-        CLICK
-      </Link>
+      <Link to="/videos" id="pushVideos" style={{ display: "none" }} />
     </div>
   )
 }
