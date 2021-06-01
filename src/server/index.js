@@ -1,41 +1,41 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom"
-import routes, { RouteWithSubRoutes } from 'server/route'
-import Header from 'layout/header'
-import Footer from 'layout/footer'
-import { providers, firebaseAppAuth } from 'firebaseConfig'
-import withFirebaseAuth from 'react-with-firebase-auth'
-import 'firebase/auth'
-import { Backdrop, CircularProgress, makeStyles } from '@material-ui/core'
-import When from 'components/Condition/When'
-import LanguagePopup from 'components/Language/Popup'
-import Version from 'components/Version'
+import routes, { RouteWithSubRoutes } from "server/route"
+import Header from "layout/header"
+import Footer from "layout/footer"
+import { providers, firebaseAppAuth } from "firebaseConfig"
+import withFirebaseAuth from "react-with-firebase-auth"
+import "firebase/auth"
+import { Backdrop, CircularProgress, makeStyles } from "@material-ui/core"
+import When from "components/Condition/When"
+import LanguagePopup from "components/Language/Popup"
+import Version from "components/Version"
 
 function Server(props) {
   const classes = useStyles()
   const { user } = props
   return (
     <Fragment>
-      <When condition={typeof (user) !== 'undefined'}>
+      <When condition={typeof user !== "undefined"}>
         <Router>
-          <When condition={typeof (user) !== 'undefined' && user !== null}>
+          <When condition={typeof user !== "undefined" && user !== null}>
             <Header {...props} />
           </When>
           <Switch>
             {routes.map((route, i) => (
-              <RouteWithSubRoutes key={i} {...route}{...props} />
+              <RouteWithSubRoutes key={i} {...route} {...props} />
             ))}
-          </Switch >
-          <When condition={typeof (user) !== 'undefined' && user !== null}>
+          </Switch>
+          <When condition={typeof user !== "undefined" && user !== null}>
             <Footer />
           </When>
-          <When condition={typeof (user) === 'undefined' || user === null}>
+          <When condition={typeof user === "undefined" || user === null}>
             <Version />
             <LanguagePopup />
           </When>
-        </Router >
+        </Router>
       </When>
-      <When condition={typeof (user) === 'undefined'}>
+      <When condition={typeof user === "undefined"}>
         <Backdrop className={classes.backdrop} open={true}>
           <CircularProgress color="inherit" />
         </Backdrop>
@@ -47,9 +47,9 @@ function Server(props) {
 const useStyles = makeStyles((theme) => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
+    color: "#fff",
   },
-}));
+}))
 
 export default withFirebaseAuth({
   providers,

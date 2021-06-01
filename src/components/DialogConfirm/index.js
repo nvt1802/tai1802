@@ -1,23 +1,22 @@
-import React from 'react'
+import React from "react"
 import {
   Button,
   Dialog,
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle
-} from '@material-ui/core'
+  DialogTitle,
+} from "@material-ui/core"
 
 export default function ConfirmDialog({
   open,
   handleClose,
   handleClickConfirm,
-  title = '',
-  content = '',
-  labelBtnConfirm = '',
-  labelBtnClose = ''
+  title = "",
+  content = "",
+  labelBtnConfirm = "",
+  labelBtnClose = "",
 }) {
-
   return (
     <Dialog
       open={open}

@@ -1,4 +1,4 @@
-import i18next from 'i18next'
+import i18next from "i18next"
 import common_cn from "translations/cn/common.json"
 import common_en from "translations/en/common.json"
 import common_jp from "translations/jp/common.json"
@@ -43,7 +43,7 @@ import settings_vn from "translations/vn/settings.json"
 
 i18next.init({
   interpolation: { escapeValue: false },
-  lng: `${localStorage.getItem('lng') || 'vn'}`,
+  lng: `${localStorage.getItem("lng") || "vn"}`,
   resources: {
     cn: {
       common: common_cn,
@@ -52,7 +52,7 @@ i18next.init({
       forgot_password: forgot_password_cn,
       header: header_cn,
       home: home_cn,
-      settings: settings_cn
+      settings: settings_cn,
     },
     en: {
       common: common_en,
@@ -61,7 +61,7 @@ i18next.init({
       forgot_password: forgot_password_en,
       header: header_en,
       home: home_en,
-      settings: settings_en
+      settings: settings_en,
     },
     jp: {
       common: common_jp,
@@ -70,7 +70,7 @@ i18next.init({
       forgot_password: forgot_password_jp,
       header: header_jp,
       home: home_jp,
-      settings: settings_jp
+      settings: settings_jp,
     },
     kr: {
       common: common_kr,
@@ -79,7 +79,7 @@ i18next.init({
       forgot_password: forgot_password_kr,
       header: header_kr,
       home: home_kr,
-      settings: settings_kr
+      settings: settings_kr,
     },
     vn: {
       common: common_vn,
@@ -88,7 +88,7 @@ i18next.init({
       forgot_password: forgot_password_vn,
       header: header_vn,
       home: home_vn,
-      settings: settings_vn
+      settings: settings_vn,
     },
   },
 })

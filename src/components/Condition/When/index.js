@@ -1,14 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react"
 
 export default function When({ condition, children }) {
   if (condition === true) {
-    return <Fragment>
-      {children}
-    </Fragment>
+    return <Fragment>{children}</Fragment>
   } else {
-    return (
-      <Fragment>
-      </Fragment>
-    )
+    return <Fragment></Fragment>
   }
 }

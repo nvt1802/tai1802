@@ -1,10 +1,10 @@
 import Axios from "axios"
-const BASE_URL = 'https://vapi.vnappmob.com'
+const BASE_URL = "https://vapi.vnappmob.com"
 
 export const findAll = () => {
-    return Axios.get(`${BASE_URL}/api/district`)
+  return Axios.get(`${BASE_URL}/api/district`)
 }
 
 export const findDistrictByDistrictId = (provinceId) => {
-    return Axios.get(`${BASE_URL}/api/ward/${provinceId}`)
+  return Axios.get(`${BASE_URL}/api/ward/${provinceId}`)
 }
