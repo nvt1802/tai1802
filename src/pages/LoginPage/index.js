@@ -14,7 +14,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import BackGroundImage from "assets/image/bgLogin/bg-login-1.jpg"
+import BackGroundImage from "assets/image/bgLogin/default.jpg"
 import {
   Visibility,
   VisibilityOff,
@@ -126,7 +126,7 @@ const LoginPage = (props) => {
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "top",
                 backgroundSize: "cover",
-                height: "80vh",
+                height: `${localStorage.getItem("bgLogin") === null? '60vh' : "80vh"}`,
                 width: "auto",
               }}
             />

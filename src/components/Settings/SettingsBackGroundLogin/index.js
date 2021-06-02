@@ -10,18 +10,21 @@ import {
   Slider,
 } from "@material-ui/core"
 import { useTranslation } from "react-i18next"
+import BackGroundImageDefault from "assets/image/bgLogin/default.jpg"
 import BackGroundImage1 from "assets/image/bgLogin/bg-login-1.jpg"
 import BackGroundImage2 from "assets/image/bgLogin/bg-login-2.jpg"
 import BackGroundImage3 from "assets/image/bgLogin/bg-login-3.jpg"
 import BackGroundImage4 from "assets/image/bgLogin/bg-login-4.jpg"
 import BackGroundImage5 from "assets/image/bgLogin/bg-login-5.jpg"
 import BackGroundImage6 from "assets/image/bgLogin/bg-login-6.jpg"
+import BackGroundImage7 from "assets/image/bgLogin/bg-login-7.jpg"
+import BackGroundImage8 from "assets/image/bgLogin/bg-login-8.jpg"
 import When from "components/Condition/When"
 
 const SettingsBackGroundLogin = () => {
   const { t } = useTranslation(["common", "settings", "login", "register"])
   const [value, setValue] = React.useState(1)
-  const [height, setHeight] = React.useState(300)
+  const [height, setHeight] = React.useState(400)
   const [bgLogin, setBgLogin] = useState(
     localStorage.getItem("bgLogin") || BackGroundImage1
   )
@@ -55,12 +58,15 @@ const SettingsBackGroundLogin = () => {
   }
 
   const arrImage = [
+    { label: "Background Image Default", src: BackGroundImageDefault },
     { label: "Background Image 1", src: BackGroundImage1 },
     { label: "Background Image 2", src: BackGroundImage2 },
     { label: "Background Image 3", src: BackGroundImage3 },
     { label: "Background Image 4", src: BackGroundImage4 },
     { label: "Background Image 5", src: BackGroundImage5 },
     { label: "Background Image 6", src: BackGroundImage6 },
+    { label: "Background Image 7", src: BackGroundImage7 },
+    { label: "Background Image 8", src: BackGroundImage8 },
   ]
 
   const renderForm = (bg, handleChangeBg, handleConfirm) => {
@@ -118,7 +124,8 @@ const SettingsBackGroundLogin = () => {
         </Tabs>
         <div style={{ width: "300px", marginTop: "1em", marginLeft: "3em" }}>
           <Slider
-            defaultValue={300}
+            disabled
+            defaultValue={400}
             aria-labelledby="range-slider"
             valueLabelDisplay="auto"
             step={1}
