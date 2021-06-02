@@ -1,10 +1,10 @@
 {
   "title_language": "Ngôn ngữ",
   "language": {
-    "cn": "Tiếng Trung",
-    "en": "Tiếng Anh",
-    "jp": "Tiếng Nhật",
-    "kr": "Tiếng Hàn",
+    "cn": "中国文字",
+    "en": "English",
+    "jp": "日本語",
+    "kr": "한국어",
     "vn": "Tiếng Việt"
   },
   "lbl_close": "Đóng",

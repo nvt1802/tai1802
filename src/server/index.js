@@ -8,7 +8,7 @@ import withFirebaseAuth from "react-with-firebase-auth"
 import "firebase/auth"
 import { Backdrop, CircularProgress, makeStyles } from "@material-ui/core"
 import When from "components/Condition/When"
-import LanguagePopup from "components/Language/Popup"
+import LanguagePopup from "components/Language/PopupRadio"
 import Version from "components/Version"
 
 function Server(props) {

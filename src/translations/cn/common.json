@@ -2,10 +2,10 @@
   "title_language": "语",
   "language": {
     "cn": "中国文字",
-    "en": "英语",
-    "jp": "日本人",
-    "kr": "韩国人",
-    "vn": "越南语"
+    "en": "English",
+    "jp": "日本語",
+    "kr": "한국어",
+    "vn": "Tiếng Việt"
   },
   "lbl_close": "关闭",
   "dialog_title_language": "设置语言",

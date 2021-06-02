@@ -1,11 +1,11 @@
 {
   "title_language": "言語",
   "language": {
-    "cn": "中国語",
-    "en": "英語",
+    "cn": "中国文字",
+    "en": "English",
     "jp": "日本語",
-    "kr": "韓国語",
-    "vn": "ベトナム語"
+    "kr": "한국어",
+    "vn": "Tiếng Việt"
   },
   "lbl_close": "閉じる",
   "dialog_title_language": "言語の設定",

@@ -1,11 +1,11 @@
 {
   "title_language": "언어",
   "language": {
-    "cn": "중국말",
-    "en": "영어",
-    "jp": "일본어",
+    "cn": "中国文字",
+    "en": "English",
+    "jp": "日本語",
     "kr": "한국어",
-    "vn": "베트남어"
+    "vn": "Tiếng Việt"
   },
   "lbl_close": "닫기",
   "dialog_title_language": "언어 설정",
