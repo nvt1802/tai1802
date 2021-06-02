@@ -18,5 +18,9 @@
   },
   "title_logout": "サインアウトの確認",
   "text_logout": "サインアウトしますか?",
-  "btn_confirm": "確認"
+  "btn_confirm": "確認",
+  "message_popup": {
+    "title_toltip_message": "メッセンジャー",
+    "plh_type_message": "ここにメッセージを入力してください..."
+  }
 }

@@ -1,8 +1,3 @@
-import { fork } from "redux-saga/effects"
-import { watcherProvinceSaga } from "./provinceSagas"
-import { watcherDistrictSaga } from "./districtSagas"
+// import { fork } from "redux-saga/effects"
 
-export function* rootSaga() {
-  yield fork(watcherProvinceSaga)
-  yield fork(watcherDistrictSaga)
-}
+export function* rootSaga() {}

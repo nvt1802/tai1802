@@ -18,5 +18,9 @@
   },
   "title_logout": "Sign out confirmation",
   "text_logout": "Do you want to sign out?",
-  "btn_confirm": "Confirm"
+  "btn_confirm": "Confirm",
+  "message_popup": {
+    "title_toltip_message": "Messenger",
+    "plh_type_message": "Type your message here..."
+  }
 }
