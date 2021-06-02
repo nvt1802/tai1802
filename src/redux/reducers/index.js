@@ -1,8 +1,6 @@
-import province from "./province"
-import district from "./district"
-import authenticate from "./authenticate"
+import message from "./message"
 import { combineReducers } from "redux"
 
-const rootReducers = combineReducers({ province, district, authenticate })
+const rootReducers = combineReducers({ message })
 
 export default rootReducers

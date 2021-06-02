@@ -18,5 +18,9 @@
   },
   "title_logout": "退出确认",
   "text_logout": "您要退出吗？",
-  "btn_confirm": "确认"
+  "btn_confirm": "确认",
+  "message_popup": {
+    "title_toltip_message": "信使",
+    "plh_type_message": "在这里输入你的消息..."
+  }
 }

@@ -6,17 +6,17 @@ const initialState = {
   error: null,
 }
 
-const province = (state = initialState, action) => {
+const message = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.PROVINCE_API_CALL_REQUEST:
+    case actionTypes.MESSAGE_REQUEST:
       return { ...state, fetching: true, data: null, error: null }
-    case actionTypes.PROVINCE_API_CALL_SUCCESS:
+    case actionTypes.MESSAGE_SUCCESS:
       return { ...state, fetching: false, data: action.data }
-    case actionTypes.PROVINCE_API_CALL_FAILURE:
+    case actionTypes.MESSAGE_FAILURE:
       return { ...state, fetching: false, data: null, error: action.error }
     default:
       return state
   }
 }
 
-export default province
+export default message

@@ -18,5 +18,9 @@
   },
   "title_logout": "로그 아웃 확인",
   "text_logout": "로그 아웃 하시겠습니까?",
-  "btn_confirm": "확인"
+  "btn_confirm": "확인",
+  "message_popup": {
+    "title_toltip_message": "전령",
+    "plh_type_message": "메세지를 여기에 입력하세요..."
+  }
 }
