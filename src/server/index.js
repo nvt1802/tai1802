@@ -10,6 +10,7 @@ import { Backdrop, CircularProgress, makeStyles } from "@material-ui/core"
 import When from "components/Condition/When"
 import LanguagePopup from "components/Language/PopupRadio"
 import Version from "components/Version"
+import ChatBox from "components/ChatBox"
 
 function Server(props) {
   const classes = useStyles()
@@ -27,6 +28,7 @@ function Server(props) {
             ))}
           </Switch>
           <When condition={typeof user !== "undefined" && user !== null}>
+            <ChatBox user={user} />
             <Footer />
           </When>
           <When condition={typeof user === "undefined" || user === null}>
