@@ -2,19 +2,31 @@ import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import PageWrapper from "components/PageWapper"
 import { useTranslation } from "react-i18next"
-import ChatBox from "components/ChatBox"
+// import { data } from "model/data"
+// import ReactPlayer from "react-player/lazy"
+// import LazyLoad from "react-lazyload"
+// import { CircularProgress, Paper } from "@material-ui/core"
 
 const HomePage = (props) => {
-  const { user } = props
   const { t } = useTranslation("home")
 
   useEffect(() => {
     document.title = t("home:title")
   })
 
+  useEffect(() => {})
+
   return (
     <PageWrapper>
-      <ChatBox user={user} />
+      {/* <Paper style={{ height: "100vh", overflowY: "auto" }}>
+        {data.map((item, index) => {
+          return (
+            <LazyLoad key={index} placeholder={<CircularProgress />}>
+              <ReactPlayer url={item.url} light={true} />
+            </LazyLoad>
+          )
+        })}
+      </Paper> */}
     </PageWrapper>
   )
 }

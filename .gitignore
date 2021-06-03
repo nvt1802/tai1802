@@ -26,3 +26,4 @@ yarn-error.log*
 .github/workflows/firebase-hosting-merge.yml
 .github/workflows/firebase-hosting-pull-request.yml
 .vscode/settings.json
+.vscode/tasks.json
