@@ -1,12 +1,8 @@
 import React, { Fragment, useState } from "react"
 import { AppBar, Tab, Tabs, Typography, Box } from "@material-ui/core"
-import {
-  ImageOutlined,
-  LanguageOutlined as LanguageIcon,
-} from "@material-ui/icons"
+import { LanguageOutlined as LanguageIcon } from "@material-ui/icons"
 import { useTranslation } from "react-i18next"
 import SetingLanguageForm from "components/Language/Form"
-import SettingsBackGroundLogin from "components/Settings/SettingsBackGroundLogin"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -38,7 +34,7 @@ export default function SettingsTabs() {
   }
 
   return (
-    <>
+    <Fragment>
       <AppBar position="relative" color="default">
         <Tabs
           value={value}
@@ -50,21 +46,14 @@ export default function SettingsTabs() {
           aria-label="scrollable force tabs example"
         >
           <Tab
-            label={t("settings:title_setting_background")}
-            icon={<ImageOutlined />}
-          />
-          <Tab
             label={t("settings:title_setting_language")}
             icon={<LanguageIcon />}
           />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <SettingsBackGroundLogin />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
         <SetingLanguageForm />
       </TabPanel>
-    </>
+    </Fragment>
   )
 }
