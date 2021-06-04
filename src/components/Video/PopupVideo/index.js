@@ -35,6 +35,7 @@ export default function PopupVideo({ item, open = false, setOpen }) {
         <ReactPlayer
           url={item?.url}
           controls={true}
+          playing
           width={matches ? "100vh" : "70vw"}
         />
       </DialogContent>
