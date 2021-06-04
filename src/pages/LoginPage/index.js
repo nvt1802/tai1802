@@ -14,7 +14,7 @@ import {
   useMediaQuery,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import BackGroundImage from "assets/image/bgLogin/default.jpg"
+import Logo from "components/Logo"
 import {
   Visibility,
   VisibilityOff,
@@ -112,25 +112,7 @@ const LoginPage = (props) => {
             position: "relative",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              height: "100%",
-            }}
-          >
-            <img
-              src={localStorage.getItem("bgLogin") || BackGroundImage}
-              alt="bg-login"
-              style={{
-                margin: "auto",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "top",
-                backgroundSize: "cover",
-                height: `${localStorage.getItem("bgLogin") === null? '60vh' : "80vh"}`,
-                width: "auto",
-              }}
-            />
-          </div>
+          <Logo />
         </div>
         <div
           className={checkSize() ? classes.colSize12 : classes.colSize6}
@@ -286,7 +268,6 @@ const LoginPage = (props) => {
                   <Grid item xs={6}>
                     <Link
                       to="#"
-                      variant="body2"
                       className={classes.link}
                       onClick={() => setShowForgotPassword(true)}
                     >
@@ -294,11 +275,7 @@ const LoginPage = (props) => {
                     </Link>
                   </Grid>
                   <Grid item xs={6}>
-                    <Link
-                      to="/register"
-                      variant="body2"
-                      className={classes.link}
-                    >
+                    <Link to="/register" className={classes.link}>
                       {t("login:lbl_sign_in")}
                     </Link>
                   </Grid>

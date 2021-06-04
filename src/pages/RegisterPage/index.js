@@ -15,7 +15,7 @@ import {
   Snackbar,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import BackGroundImage from "assets/image/bgLogin/default.jpg"
+import Logo from "components/Logo"
 import {
   Visibility,
   VisibilityOff,
@@ -119,27 +119,7 @@ const RegisterPage = (props) => {
             position: "relative",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              height: "100%",
-            }}
-          >
-            <img
-              src={localStorage.getItem("bgRegister") || BackGroundImage}
-              alt="bg-login"
-              style={{
-                margin: "auto",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "top",
-                backgroundSize: "cover",
-                height: `${
-                  localStorage.getItem("bgRegister") === null ? "60vh" : "80vh"
-                }`,
-                width: "auto",
-              }}
-            />
-          </div>
+          <Logo />
         </div>
         <div
           className={checkSize() ? classes.colSize12 : classes.colSize6}
