@@ -1,3 +1,9 @@
 {
-  "title": "Videos"
+  "title_youtube": "Youtube",
+  "title_others": "Others",
+  "lbl_search": "Search by song title or artist name",
+  "lbl_song_name": "Name of the song",
+  "lbl_singer_name": "Singer",
+  "lbl_play_video": "Watch video",
+  "lbl_close": "Close"
 }

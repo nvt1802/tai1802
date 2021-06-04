@@ -1,5 +1,5 @@
 import React from "react"
-import LogoImg from "assets/image/bgLogin/logo.png"
+import LogoImg from "assets/image/Logo/logo.png"
 
 export default function Logo() {
   return (

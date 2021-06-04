@@ -90,7 +90,6 @@ const LoginPage = (props) => {
   }
 
   const onSubmit = (data) => {
-    console.log(firebase.auth())
     signInWithEmailAndPassword(data?.email, data?.password)
       .then((res) => history?.push("/"))
       .catch((error) => {

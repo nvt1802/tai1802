@@ -1,3 +1,9 @@
 {
-  "title": "Video"
+  "title_youtube": "Youtube",
+  "title_others": "Khác",
+  "lbl_search": "Tìm kiếm theo tên bài hát hoặc ca sĩ",
+  "lbl_song_name": "Tên bài hát",
+  "lbl_singer_name": "Ca sĩ",
+  "lbl_play_video": "Xem video",
+  "lbl_close": "Đóng"
 }
