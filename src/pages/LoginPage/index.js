@@ -21,7 +21,6 @@ import {
   Person,
   LockRounded,
 } from "@material-ui/icons"
-import firebase from "firebase/app"
 import "firebase/auth"
 import { Controller, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
