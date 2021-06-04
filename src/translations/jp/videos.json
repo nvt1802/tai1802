@@ -1,3 +1,9 @@
 {
-  "title": "動画"
+  "title_youtube": "ユーチューブ",
+  "title_others": "その他",
+  "lbl_search": "曲名やアーティスト名で検索",
+  "lbl_song_name": "曲名",
+  "lbl_singer_name": "歌手",
+  "lbl_play_video": "ビデオを見る",
+  "lbl_close": "閉じる"
 }

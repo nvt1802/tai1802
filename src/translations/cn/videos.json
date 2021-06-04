@@ -1,3 +1,9 @@
 {
-  "title": "视频"
+  "title_youtube": "Youtube",
+  "title_others": "其他",
+  "lbl_search": "按歌曲名称或艺术家姓名搜索",
+  "lbl_song_name": "歌名",
+  "lbl_singer_name": "歌手",
+  "lbl_play_video": "看视频",
+  "lbl_close": "关闭"
 }

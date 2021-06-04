@@ -1,3 +1,9 @@
 {
-  "title": "동영상"
+  "title_youtube": "유튜브",
+  "title_others": "기타",
+  "lbl_search": "노래 제목 또는 아티스트 이름으로 검색",
+  "lbl_song_name": "노래 이름",
+  "lbl_singer_name": "가수",
+  "lbl_play_video": "비디오를보다",
+  "lbl_close": "닫기"
 }
