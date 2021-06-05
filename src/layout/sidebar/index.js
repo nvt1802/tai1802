@@ -38,6 +38,10 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
     document.getElementById("pushVideos").click()
   }
 
+  const handlePushPageAbout = () => {
+    document.getElementById("pushAbout").click()
+  }
+
   const list = (props) => (
     <div
       className={classes.list}
@@ -56,6 +60,15 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
 
       <Divider />
 
+      <List onClick={handlePushPageVideos}>
+        <ListItem button>
+          <ListItemIcon>
+            <VideoLibraryIcon fontSize="small" />
+          </ListItemIcon>
+          <ListItemText primary={t("header:btn_videos")} />
+        </ListItem>
+      </List>
+
       <List onClick={handlePushPageSettings}>
         <ListItem button>
           <ListItemIcon>
@@ -65,12 +78,12 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
         </ListItem>
       </List>
 
-      <List onClick={handlePushPageVideos}>
+      <List onClick={handlePushPageAbout}>
         <ListItem button>
           <ListItemIcon>
-            <VideoLibraryIcon fontSize="small" />
+            <SettingsIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary={t("header:btn_videos")} />
+          <ListItemText primary={t("header:btn_about")} />
         </ListItem>
       </List>
 
@@ -97,6 +110,7 @@ export default function Sidebar({ user, handleLogout, isOpen, toggleDrawer }) {
       </SwipeableDrawer>
       <Link to="/settings" id="pushSettings" style={{ display: "none" }} />
       <Link to="/videos" id="pushVideos" style={{ display: "none" }} />
+      <Link to="/about" id="pushAbout" style={{ display: "none" }} />
     </div>
   )
 }
