@@ -8,6 +8,7 @@
       "components": ["components/*"],
       "pages": ["pages/*"],
       "redux": ["redux/*"]
-    }
+    },
+    "resolveJsonModule": true
   }
 }
