@@ -53,6 +53,12 @@ import notFount404_jp from "translations/jp/404.json"
 import notFount404_kr from "translations/kr/404.json"
 import notFount404_vn from "translations/vn/404.json"
 
+import about_cn from "translations/cn/about.json"
+import about_en from "translations/en/about.json"
+import about_jp from "translations/jp/about.json"
+import about_kr from "translations/kr/about.json"
+import about_vn from "translations/vn/about.json"
+
 i18next.init({
   interpolation: { escapeValue: false },
   lng: `${localStorage.getItem("lng") || "vn"}`,
@@ -67,6 +73,7 @@ i18next.init({
       settings: settings_cn,
       videos: videos_cn,
       404: notFount404_cn,
+      about: about_cn,
     },
     en: {
       common: common_en,
@@ -78,6 +85,7 @@ i18next.init({
       settings: settings_en,
       videos: videos_en,
       404: notFount404_en,
+      about: about_en,
     },
     jp: {
       common: common_jp,
@@ -89,6 +97,7 @@ i18next.init({
       settings: settings_jp,
       videos: videos_jp,
       404: notFount404_jp,
+      about: about_jp,
     },
     kr: {
       common: common_kr,
@@ -100,6 +109,7 @@ i18next.init({
       settings: settings_kr,
       videos: videos_kr,
       404: notFount404_kr,
+      about: about_kr,
     },
     vn: {
       common: common_vn,
@@ -111,6 +121,7 @@ i18next.init({
       settings: settings_vn,
       videos: videos_vn,
       404: notFount404_vn,
+      about: about_vn,
     },
   },
 })

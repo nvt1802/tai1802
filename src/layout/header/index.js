@@ -14,6 +14,7 @@ import {
   ExitToApp as LogoutIcon,
   Settings as SettingsIcon,
   VideoLibrary as VideoLibraryIcon,
+  AccountBox as AccountBoxIcon,
 } from "@material-ui/icons"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { useTranslation } from "react-i18next"
@@ -37,8 +38,8 @@ export default function Header(props) {
   const { t } = useTranslation(["header", "common"])
   const [isOpenSidebar, setOpenSidebar] = useState(false)
   const [isShowDialog, setDialog] = useState(false)
-  const maxMm = useMediaQuery("(max-width:875px)")
-  const minLg = useMediaQuery("(min-width:875px)")
+  const maxMm = useMediaQuery("(max-width:910px)")
+  const minLg = useMediaQuery("(min-width:910px)")
 
   useEffect(() => {
     const headerElement = document.getElementsByTagName("header")[0]
@@ -55,6 +56,7 @@ export default function Header(props) {
     const homePageElement = document.getElementById("home-page")
     const settingsPageElement = document.getElementById("settings-page")
     const videosPageElement = document.getElementById("videos-page")
+    const aboutPageElement = document.getElementById("about-page")
     const windowsScrollTop = window.pageYOffset
     if (windowsScrollTop > 150) {
       headerElement.style.backgroundColor = "white"
@@ -69,6 +71,9 @@ export default function Header(props) {
       if (typeof videosPageElement !== "undefined" && videosPageElement) {
         videosPageElement.style.color = "black"
       }
+      if (typeof aboutPageElement !== "undefined" && aboutPageElement) {
+        aboutPageElement.style.color = "black"
+      }
     } else {
       headerElement.style.backgroundColor = "transparent"
       headerElement.style.boxShadow = "unset"
@@ -79,6 +84,9 @@ export default function Header(props) {
       }
       if (typeof videosPageElement !== "undefined" && videosPageElement) {
         videosPageElement.style.color = "white"
+      }
+      if (typeof aboutPageElement !== "undefined" && aboutPageElement) {
+        aboutPageElement.style.color = "white"
       }
     }
   }
@@ -104,8 +112,8 @@ export default function Header(props) {
     <Toolbar
       style={{
         alignItems: "center",
-        paddingLeft: "6em",
-        paddingRight: "6em",
+        paddingLeft: "4em",
+        paddingRight: "4em",
       }}
     >
       <Typography variant="h6" className={classes.title}>
@@ -129,6 +137,21 @@ export default function Header(props) {
 
               <Grid style={{ margin: "auto" }}>
                 <MenuItem>
+                  <VideoLibraryIcon fontSize="small" />
+                  <Link
+                    to="/videos"
+                    id="videos-page"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <span style={{ marginLeft: "0.5em" }}>
+                      {t("header:btn_videos")}
+                    </span>
+                  </Link>
+                </MenuItem>
+              </Grid>
+
+              <Grid style={{ margin: "auto" }}>
+                <MenuItem>
                   <SettingsIcon fontSize="small" />
                   <Link
                     to="/settings"
@@ -144,14 +167,14 @@ export default function Header(props) {
 
               <Grid style={{ margin: "auto" }}>
                 <MenuItem>
-                  <VideoLibraryIcon fontSize="small" />
+                  <AccountBoxIcon fontSize="small" />
                   <Link
-                    to="/videos"
-                    id="videos-page"
+                    to="/about"
+                    id="about-page"
                     style={{ textDecoration: "none", color: "white" }}
                   >
                     <span style={{ marginLeft: "0.5em" }}>
-                      {t("header:btn_videos")}
+                      {t("header:btn_about")}
                     </span>
                   </Link>
                 </MenuItem>

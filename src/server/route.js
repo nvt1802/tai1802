@@ -7,6 +7,7 @@ import LoginPage from "pages/LoginPage"
 import RegisterPage from "pages/RegisterPage"
 import SettingsPage from "pages/SettingsPage"
 import VideosPage from "pages/VideosPage"
+import AboutPage from "pages/AboutPage"
 import NotFound404Page from "pages/_404Page"
 
 import AuthRoute from "server/AuthRoute"
@@ -42,6 +43,11 @@ const routes = [
     path: "/register",
     exact: true,
     component: (props) => <RegisterPage {...props} />,
+  },
+  {
+    path: "/about",
+    exact: true,
+    component: (props) => <AboutPage {...props} />,
   },
   {
     path: "",

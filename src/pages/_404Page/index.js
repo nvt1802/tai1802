@@ -2,9 +2,9 @@ import React, { useEffect } from "react"
 import { makeStyles } from "@material-ui/core"
 import clsx from "clsx"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 import PageWrapper from "components/PageWapper"
 import NotFound404 from "components/_404"
-import { Link } from "react-router-dom"
 
 export default function _404Page(props) {
   const { history } = props
