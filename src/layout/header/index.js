@@ -38,8 +38,8 @@ export default function Header(props) {
   const { t } = useTranslation(["header", "common"])
   const [isOpenSidebar, setOpenSidebar] = useState(false)
   const [isShowDialog, setDialog] = useState(false)
-  const maxMm = useMediaQuery("(max-width:975px)")
-  const minLg = useMediaQuery("(min-width:975px)")
+  const maxMm = useMediaQuery("(max-width:910px)")
+  const minLg = useMediaQuery("(min-width:910px)")
 
   useEffect(() => {
     const headerElement = document.getElementsByTagName("header")[0]
@@ -112,8 +112,8 @@ export default function Header(props) {
     <Toolbar
       style={{
         alignItems: "center",
-        paddingLeft: "6em",
-        paddingRight: "6em",
+        paddingLeft: "4em",
+        paddingRight: "4em",
       }}
     >
       <Typography variant="h6" className={classes.title}>
