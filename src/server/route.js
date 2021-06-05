@@ -7,6 +7,7 @@ import LoginPage from "pages/LoginPage"
 import RegisterPage from "pages/RegisterPage"
 import SettingsPage from "pages/SettingsPage"
 import VideosPage from "pages/VideosPage"
+import NotFound404Page from "pages/_404Page"
 
 import AuthRoute from "server/AuthRoute"
 
@@ -45,7 +46,7 @@ const routes = [
   {
     path: "",
     exact: false,
-    component: () => <div>NOT FOUND</div>,
+    component: (props) => <NotFound404Page {...props} />,
   },
 ]
 
