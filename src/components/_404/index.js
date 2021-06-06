@@ -4,8 +4,8 @@ function _404({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="380"
-      height="500"
+      width="100%"
+      height="100vh"
       version="1.1"
       viewBox="0 0 837 1045"
     >
