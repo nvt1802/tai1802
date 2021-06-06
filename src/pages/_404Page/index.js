@@ -27,7 +27,7 @@ export default function _404Page(props) {
         <h1 className={classes.h1}>404</h1>
         <p>{t("404:title")}</p>
         <div className={classes.buttonsConActionLinkWrap}>
-          <div className="action-link-wrap">
+          <div style={{ display: "flex" }}>
             <a
               href="/"
               onClick={handleGoBack}

@@ -114,7 +114,7 @@ const RegisterPage = (props) => {
         <div
           className={checkSize() ? classes.hidden : classes.colSize6}
           style={{
-            backgroundColor: "green",
+            // backgroundColor: "green",
             height: "100vh",
             position: "relative",
           }}
@@ -124,7 +124,7 @@ const RegisterPage = (props) => {
         <div
           className={checkSize() ? classes.colSize12 : classes.colSize6}
           style={{
-            backgroundColor: "#dde4dd",
+            // backgroundColor: "#dde4dd",
             height: "100vh",
           }}
         >
